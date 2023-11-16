@@ -46,6 +46,10 @@ const theme = {
         input: 8,
         button: 12,
         cards: 16
-    }
+    },
+shadows: {
+    primary: '2px 4px 16px 0px rgba(115, 115, 115, 0.20)',
+  },
 };
+
 export default theme;

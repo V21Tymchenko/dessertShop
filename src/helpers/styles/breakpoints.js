@@ -6,7 +6,7 @@ export const size = {
   desktop: '1272px',
 };
 
-export const breakpoints = {
+ const breakpoints = {
   mobile: `(min-width: ${size.mobile})`,
   maxMobile: `(max-width: ${size.maxMobile})`,
 
@@ -15,4 +15,5 @@ export const breakpoints = {
   maxTablet: `(max-width: ${size.maxTablet})`,
 
   desktop: `(min-width: ${size.desktop})`,
-};
+ };
+export default breakpoints;

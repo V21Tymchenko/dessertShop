@@ -1,8 +1,7 @@
 
 import { Route, Routes } from 'react-router-dom';
-import './App.css'
-import SharedLayout from './components/SharedLayout/SharedLayout';
-// import Test from './components/Test';
+import SharedLayout from './components/SharedLayout';
+
 
 
 const App = () => {
