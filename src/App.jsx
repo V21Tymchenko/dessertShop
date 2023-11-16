@@ -1,22 +1,30 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SharedLayout from './components/SharedLayout/SharedLayout';
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
-import Test from './components/Test';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+// import Test from './components/Test';
 
 
-function App() {
+const App = () => {
   return (
-    <Router>
+    <div>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Test />} />
-          <Route path="cakes" element={<Test />} />
-        </Route>
+        <Route path="/" element={<SharedLayout />} >
+         <Route index element={<div>Home</div>} />
+          <Route path="cakes" element={<div>CAKES</div>} />
+          <Route path="constructor" element={<div>CONSTRUCTOR</div>} />
+          <Route path="about" element={<div>ABOUT</div>} />
+          <Route path="delivery" element={<div>DELIVERY</div>} />
+          <Route path="cooperation" element={<div>COOPERATION</div>} />
+          <Route path="questions" element={<div>QUESTIONS</div>} />
+          <Route path="contacts" element={<div>CONTACTS</div>} />
+          </Route>
       </Routes>
-    </Router>
+      </div>
   );
 }
 
 
 
 export default App;
+

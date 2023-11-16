@@ -1,18 +1,27 @@
-import { Link, Outlet } from 'react-router-dom';
-import navItems from '../../helpers/navItems';
-import MainHeader from './SharedLayout';
+// import { Suspense } from 'react';
+// import { Outlet } from 'react-router-dom';
+// import Navigation from '../Navigation/Navigation';
+
+import { Outlet } from "react-router-dom";
+import MainHeader from "../MainHeader/MainHeader";
+import Navigation from "../Navigation/Navigation";
+
 
 
 const SharedLayout = () => {
   return (
-    <>
+    <div>
       <MainHeader/>
-      <header>{navItems.map(({href, text}) => (
-        <Link to={href} key={href}>{text}</Link>
-      ))}</header>
-      <main> <Outlet /></main>
+      <Navigation />
+      <main>
+        <Outlet />
+      </main> 
+      {/* <main>
+        <Suspense>
+          <Outlet />
+        </Suspense></main> */}
 
-    </>
+    </div>
   );
 };
 
