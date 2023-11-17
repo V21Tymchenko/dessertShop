@@ -48,9 +48,9 @@ export const ButtonStyled = styled.button`
   ${({ $variant }) =>
     $variant === "cardOpacity" &&
     css`
-      font-weight: ${({ theme }) => theme.fontWeights.semibild};
+      font-weight: ${({ theme }) => theme.fontWeights.semibold};
       color: ${({ theme }) => theme.colors.text};
-      font-weight: ${({ theme }) => theme.fontWeights.semibild};
+      font-weight: ${({ theme }) => theme.fontWeights.semibold};
 
       background-color: ${({ theme }) => theme.colors.body};
       border: 1px solid ${({ theme }) => theme.colors.buttons};
