@@ -1,15 +1,12 @@
-
-import { Route, Routes } from 'react-router-dom';
-import SharedLayout from './components/SharedLayout';
-
-
+import { Route, Routes } from "react-router-dom";
+import SharedLayout from "@/components/SharedLayout";
 
 const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<SharedLayout />} >
-         <Route index element={<div>Home</div>} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<div>Home</div>} />
           <Route path="cakes" element={<div>CAKES</div>} />
           <Route path="constructor" element={<div>CONSTRUCTOR</div>} />
           <Route path="about" element={<div>ABOUT</div>} />
@@ -17,13 +14,10 @@ const App = () => {
           <Route path="cooperation" element={<div>COOPERATION</div>} />
           <Route path="questions" element={<div>QUESTIONS</div>} />
           <Route path="contacts" element={<div>CONTACTS</div>} />
-          </Route>
+        </Route>
       </Routes>
-      </div>
+    </div>
   );
-}
-
-
+};
 
 export default App;
-

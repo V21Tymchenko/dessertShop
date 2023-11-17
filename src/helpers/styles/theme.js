@@ -1,15 +1,17 @@
 const theme = {
     colors: {
-        body: "ffffff",
-        text: "121212",
-        import: "#ebebeb",
+        body: "#ffffff",
+        text: "#121212",
+        input: "#ebebeb",
+        inputText: "#555555",
         buttons: "#f575a1",
         footer: "#f7d1de",
         accentPink: "#f7d1de",
         accentYellow: "#ffeb98",
         accentGreen: "#bff3ee",
         accentBlue: "#cddafa",
-        hoverButtons: "#b83d6e"
+        hoverButtons: "#b83d6e",
+        hoverHeaderIcon: "#fff0f5"
     },
     space: [0, 2, 4, 6, 8, 16, 24, 36, 40, 56, 60, 72, 120],
     fonts: {

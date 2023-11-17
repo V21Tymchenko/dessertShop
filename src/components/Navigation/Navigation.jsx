@@ -1,11 +1,23 @@
-import { Link } from "react-router-dom"
-import navItems from "../../helpers/navItems";
-
+import navItems from "@/helpers/navItems";
+import {
+  HeaderNavItem,
+  HeaderNavLink,
+  HeaderNavList,
+} from "./Navigation.styled";
 
 const Navigation = () => {
-  return (<header><nav><ul>{navItems.map(({ href, text }) => (
-    <li key={href}><Link to={href}>{text}</Link></li>
-    ))}</ul></nav>
-    </header>)
+  return (
+    <header>
+      <nav>
+        <HeaderNavList>
+          {navItems.map(({ href, text }) => (
+            <HeaderNavItem key={href}>
+              <HeaderNavLink to={href}>{text}</HeaderNavLink>
+            </HeaderNavItem>
+          ))}
+        </HeaderNavList>
+      </nav>
+    </header>
+  );
 };
 export default Navigation;
