@@ -5,7 +5,7 @@ import breakpoints from '@/helpers/styles/breakpoints';
 export const ContainerStyled = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 16px;
   min-width: 320px;
   max-width: 480px;
 
@@ -16,6 +16,6 @@ export const ContainerStyled = styled.div`
 
   @media ${breakpoints.desktop} {
     padding: 0 16px;
-    max-width: 1280px;
+    max-width: 1272px;
   }
 `;
