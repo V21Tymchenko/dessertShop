@@ -11,18 +11,18 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-top: 48px;
-  margin-bottom: ${p => p.theme.space[6]}px;
+  margin-bottom: ${({ theme }) => theme.spacing(6)};
 `;
 export const UserMenu = styled.div`
   display: flex;
   align-items: center;
-  gap: ${p => p.theme.space[5]}px;
-  padding-right: ${p => p.theme.space[8]}px;
+  gap: ${({ theme }) => theme.spacing(4)};
+  padding-right: ${({ theme }) => theme.spacing(10)};
 `;
 export const ContainerContacts = styled.div`
   display: flex;
   align-items: center;
-  gap: ${p => p.theme.space[4]}px;
+  gap: ${({ theme }) => theme.spacing(2)};
 `;
 export const ContainerUserMenu = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ export const HeaderInput = styled.input`
   width: 397px;
   height: 48px;
   padding: 12px 16px 12px 48px;
-  border-radius: ${p => p.theme.radii.button}px;
+  border-radius: ${p => p.theme.radii.button};
   background: ${p => p.theme.colors.input};
   border: ${p => p.theme.borders.none};
   ::placeholder {
@@ -52,7 +52,7 @@ export const SearchButton = styled.button`
   -webkit-box-pack: center;
   justify-content: center;
   position: absolute;
-  left: ${p => p.theme.space[5]}px;
+  left: ${({ theme }) => theme.spacing(4)};
   top: 50%;
   transform: translateY(-50%);
   border: none;
@@ -67,49 +67,49 @@ export const SearchIcon = styled(IconForSearch)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const FavoriteIcon = styled(AddFavorite)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const BasketIcon = styled(AddInBasket)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const AuthorizationIcon = styled(UserIcon)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const InstagramLink = styled(InstagramIcon)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const TelegramLink = styled(TelegramIcon)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const HeaderIconButton = styled.button`
-  padding: ${p => p.theme.space[2]}px;
+  padding: ${({ theme }) => theme.spacing(1)};
   width: 48px;
   height: 48px;
-  border-radius: ${p => p.theme.radii.button}px;
+  border-radius: ${p => p.theme.radii.button};
   &:hover {
     background-color: ${p => p.theme.colors.hoverHeaderIcon};
     cursor: pointer;
@@ -118,10 +118,10 @@ export const HeaderIconButton = styled.button`
 export const HeaderIconLink = styled.a`
   display: flex;
   align-items: center;
-  padding: ${p => p.theme.space[2]}px;
+  padding: ${({ theme }) => theme.spacing(1)};
   width: 48px;
   height: 48px;
-  border-radius: ${p => p.theme.radii.button}px;
+  border-radius: ${p => p.theme.radii.button};
   &:hover {
     background-color: ${p => p.theme.colors.hoverHeaderIcon};
   }
