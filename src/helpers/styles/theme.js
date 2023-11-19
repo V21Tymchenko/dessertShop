@@ -13,7 +13,6 @@ const theme = {
     hoverButtons: "#D85087",
     hoverHeaderIcon: "#fff0f5",
   },
-  // space: [0, 2, 4, 6, 8, 16, 24, 36, 40, 56, 60, 72, 120],
   spacing: value => `${4 * value}px`,
   fonts: {
     primary: "Nunito, sans-serif",
@@ -31,7 +30,7 @@ const theme = {
   fontWeights: {
     regular: 400,
     medium: 500,
-    semibild: 600,
+    semibold: 600,
     bold: 700,
   },
   lineHeights: {
