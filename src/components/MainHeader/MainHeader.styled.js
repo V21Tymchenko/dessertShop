@@ -10,19 +10,18 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 48px;
-  margin-bottom: ${p => p.theme.space[6]}px;
+  margin-top: ${({ theme }) => theme.spacing(12)};
 `;
 export const UserMenu = styled.div`
   display: flex;
   align-items: center;
-  gap: ${p => p.theme.space[5]}px;
-  padding-right: ${p => p.theme.space[8]}px;
+  gap: ${({ theme }) => theme.spacing(4)};
+  padding-right: ${({ theme }) => theme.spacing(10)};
 `;
 export const ContainerContacts = styled.div`
   display: flex;
   align-items: center;
-  gap: ${p => p.theme.space[4]}px;
+  gap: 6px;
 `;
 export const ContainerUserMenu = styled.div`
   display: flex;
@@ -35,13 +34,13 @@ export const HeaderInput = styled.input`
   width: 397px;
   height: 48px;
   padding: 12px 16px 12px 48px;
-  border-radius: ${p => p.theme.radii.button}px;
-  background: ${p => p.theme.colors.input};
-  border: ${p => p.theme.borders.none};
+  border-radius: ${({ theme }) => theme.radii.button}px;
+  background: ${({ theme }) => theme.colors.input};
+  border: ${({ theme }) => theme.borders.none};
   ::placeholder {
-    color: ${p => p.theme.colors.inputText};
-    font-family: ${p => p.theme.colors.primary};
-    font-size: 16px;
+    color: ${({ theme }) => theme.colors.inputText};
+    font-family: ${({ theme }) => theme.colors.primary};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
   }
 `;
 
@@ -52,7 +51,7 @@ export const SearchButton = styled.button`
   -webkit-box-pack: center;
   justify-content: center;
   position: absolute;
-  left: ${p => p.theme.space[5]}px;
+  left: ${({ theme }) => theme.spacing(4)};
   top: 50%;
   transform: translateY(-50%);
   border: none;
@@ -67,63 +66,63 @@ export const SearchIcon = styled(IconForSearch)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const FavoriteIcon = styled(AddFavorite)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const BasketIcon = styled(AddInBasket)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const AuthorizationIcon = styled(UserIcon)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const InstagramLink = styled(InstagramIcon)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const TelegramLink = styled(TelegramIcon)`
   color: inherit;
   fill: inherit;
   margin: 0 auto;
-  height: ${p => p.theme.space[6]}px;
-  width: ${p => p.theme.space[6]}px;
+  height: ${({ theme }) => theme.spacing(6)};
+  width: ${({ theme }) => theme.spacing(6)};
 `;
 export const HeaderIconButton = styled.button`
-  padding: ${p => p.theme.space[2]}px;
-  width: 48px;
-  height: 48px;
-  border-radius: ${p => p.theme.radii.button}px;
+  padding: ${({ theme }) => theme.spacing(1)};
+  width: ${({ theme }) => theme.spacing(12)};
+  height: ${({ theme }) => theme.spacing(12)};
+  border-radius: ${({ theme }) => theme.radii.button}px;
   &:hover {
-    background-color: ${p => p.theme.colors.hoverHeaderIcon};
+    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
     cursor: pointer;
   }
 `;
 export const HeaderIconLink = styled.a`
   display: flex;
   align-items: center;
-  padding: ${p => p.theme.space[2]}px;
-  width: 48px;
-  height: 48px;
-  border-radius: ${p => p.theme.radii.button}px;
+  padding: ${({ theme }) => theme.spacing(1)};
+  width: ${({ theme }) => theme.spacing(12)};
+  height: ${({ theme }) => theme.spacing(12)};
+  border-radius: ${({ theme }) => theme.radii.button}px;
   &:hover {
-    background-color: ${p => p.theme.colors.hoverHeaderIcon};
+    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }
   cursor: pointer;
 `;

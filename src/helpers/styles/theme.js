@@ -6,14 +6,11 @@ const theme = {
         inputText: "#555555",
         buttons: "#f575a1",
         footer: "#f7d1de",
-        accentPink: "#f7d1de",
-        accentYellow: "#ffeb98",
-        accentGreen: "#bff3ee",
-        accentBlue: "#cddafa",
-        hoverButtons: "#b83d6e",
+        hover: "#d85087",
+        active: "#b83d6e",
         hoverHeaderIcon: "#fff0f5"
     },
-    space: [0, 2, 4, 6, 8, 16, 24, 36, 40, 56, 60, 72, 120],
+    spacing: (value) => `${4 * value}px`,
     fonts: {
         primary: "Nunito, sans-serif",
         secondary: "Mulish, sans-serif"
@@ -23,6 +20,7 @@ const theme = {
         xs: "16px",
         s: "18px",
         m: "20px",
+        ml:"24px",
         l: "32px",
         xl: "36px",
         xxl: "48px"
@@ -30,7 +28,7 @@ const theme = {
     fontWeights: {
         regular: 400,
         medium: 500,
-        semibild: 600,
+        semibold: 600,
         bold: 700
     },
     lineHeights: {
