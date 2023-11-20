@@ -10,8 +10,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 48px;
-  margin-bottom: ${({ theme }) => theme.spacing(6)};
+  margin-top: ${({ theme }) => theme.spacing(12)};
 `;
 export const UserMenu = styled.div`
   display: flex;
@@ -22,7 +21,7 @@ export const UserMenu = styled.div`
 export const ContainerContacts = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing(2)};
+  gap: 6px;
 `;
 export const ContainerUserMenu = styled.div`
   display: flex;
@@ -39,9 +38,9 @@ export const HeaderInput = styled.input`
   background: ${p => p.theme.colors.input};
   border: ${p => p.theme.borders.none};
   ::placeholder {
-    color: ${p => p.theme.colors.inputText};
-    font-family: ${p => p.theme.colors.primary};
-    font-size: 16px;
+    color: ${({ theme }) => theme.colors.inputText};
+    font-family: ${({ theme }) => theme.colors.primary};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
   }
 `;
 
@@ -107,11 +106,11 @@ export const TelegramLink = styled(TelegramIcon)`
 `;
 export const HeaderIconButton = styled.button`
   padding: ${({ theme }) => theme.spacing(1)};
-  width: 48px;
-  height: 48px;
-  border-radius: ${p => p.theme.radii.button};
+  width: ${({ theme }) => theme.spacing(12)};
+  height: ${({ theme }) => theme.spacing(12)};
+  border-radius: ${({ theme }) => theme.radii.button};
   &:hover {
-    background-color: ${p => p.theme.colors.hoverHeaderIcon};
+    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
     cursor: pointer;
   }
 `;
@@ -119,11 +118,11 @@ export const HeaderIconLink = styled.a`
   display: flex;
   align-items: center;
   padding: ${({ theme }) => theme.spacing(1)};
-  width: 48px;
-  height: 48px;
-  border-radius: ${p => p.theme.radii.button};
+  width: ${({ theme }) => theme.spacing(12)};
+  height: ${({ theme }) => theme.spacing(12)};
+  border-radius: ${({ theme }) => theme.radii.button};
   &:hover {
-    background-color: ${p => p.theme.colors.hoverHeaderIcon};
+    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }
   cursor: pointer;
 `;

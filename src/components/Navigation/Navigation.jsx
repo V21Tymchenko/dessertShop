@@ -1,5 +1,6 @@
 import navItems from "@/helpers/navItems";
 import {
+  Header,
   HeaderNavItem,
   HeaderNavLink,
   HeaderNavList,
@@ -7,7 +8,7 @@ import {
 
 const Navigation = () => {
   return (
-    <header>
+    <Header>
       <nav>
         <HeaderNavList>
           {navItems.map(({ href, text }) => (
@@ -17,7 +18,7 @@ const Navigation = () => {
           ))}
         </HeaderNavList>
       </nav>
-    </header>
+    </Header>
   );
 };
 export default Navigation;
