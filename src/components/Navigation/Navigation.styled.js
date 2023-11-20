@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export const HeaderNavList = styled.ul`
   display: flex;
@@ -8,7 +8,7 @@ export const HeaderNavList = styled.ul`
 `;
 export const HeaderNavItem = styled.li`
   padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(4)};
-  border-radius: ${({ theme }) => theme.radii.button}px;
+  border-radius: ${({ theme }) => theme.radii.button};
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }
@@ -23,7 +23,3 @@ export const HeaderNavLink = styled(NavLink)`
 export const Header = styled.header`
   margin-top: ${({ theme }) => theme.spacing(6)};
 `;
-
-
-
-    

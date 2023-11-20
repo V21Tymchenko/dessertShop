@@ -34,9 +34,9 @@ export const HeaderInput = styled.input`
   width: 397px;
   height: 48px;
   padding: 12px 16px 12px 48px;
-  border-radius: ${({ theme }) => theme.radii.button}px;
-  background: ${({ theme }) => theme.colors.input};
-  border: ${({ theme }) => theme.borders.none};
+  border-radius: ${p => p.theme.radii.button};
+  background: ${p => p.theme.colors.input};
+  border: ${p => p.theme.borders.none};
   ::placeholder {
     color: ${({ theme }) => theme.colors.inputText};
     font-family: ${({ theme }) => theme.colors.primary};
@@ -108,7 +108,7 @@ export const HeaderIconButton = styled.button`
   padding: ${({ theme }) => theme.spacing(1)};
   width: ${({ theme }) => theme.spacing(12)};
   height: ${({ theme }) => theme.spacing(12)};
-  border-radius: ${({ theme }) => theme.radii.button}px;
+  border-radius: ${({ theme }) => theme.radii.button};
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
     cursor: pointer;
@@ -120,7 +120,7 @@ export const HeaderIconLink = styled.a`
   padding: ${({ theme }) => theme.spacing(1)};
   width: ${({ theme }) => theme.spacing(12)};
   height: ${({ theme }) => theme.spacing(12)};
-  border-radius: ${({ theme }) => theme.radii.button}px;
+  border-radius: ${({ theme }) => theme.radii.button};
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }
