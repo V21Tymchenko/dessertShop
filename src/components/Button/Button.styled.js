@@ -43,6 +43,7 @@ export const ButtonStyled = styled.button`
     $variant === "hero" &&
     css`
       max-width: 288px;
+      margin-top: 64px;
     `}
 
   ${({ $variant }) =>
