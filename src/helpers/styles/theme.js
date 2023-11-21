@@ -9,7 +9,8 @@ const theme = {
     hover: "#d85087",
     active: "#b83d6e",
     hoverButtons: "#D85087",
-    hoverHeaderIcon: "fff0f5",
+    hoverHeaderIcon: "#fff0f5",
+    borderCards: "#ffeb98",
   },
   spacing: value => `${4 * value}px`,
   fonts: {

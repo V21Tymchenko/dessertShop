@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Instagram from "../../assets/images/footer/instagram.svg?react";
+import Phone from "../../assets/images/footer/phone.svg?react";
 
 export const ContainerFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer};
@@ -51,10 +53,20 @@ export const FooterListLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.text};
 `;
 export const FooterLink = styled.a`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(2)};
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   color: ${({ theme }) => theme.colors.text};
 `;
 export const CopyrightText = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.xs};
+`;
+export const InstagramIcon = styled(Instagram)`
+  width: ${({ theme }) => theme.spacing(6)};
+  height: ${({ theme }) => theme.spacing(6)};
+`;
+export const PhoneIcon = styled(Phone)`
+  width: ${({ theme }) => theme.spacing(6)};
+  height: ${({ theme }) => theme.spacing(6)};
 `;

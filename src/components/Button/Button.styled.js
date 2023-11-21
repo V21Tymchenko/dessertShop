@@ -24,7 +24,7 @@ export const ButtonStyled = styled.button`
 
   &:focus,
   &:hover {
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
     background-color: ${({ theme }) => theme.colors.hoverButtons};
   }
 
@@ -55,5 +55,9 @@ export const ButtonStyled = styled.button`
 
       background-color: ${({ theme }) => theme.colors.body};
       border: 1px solid ${({ theme }) => theme.colors.buttons};
+      &:focus,
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
+      }
     `}
 `;
