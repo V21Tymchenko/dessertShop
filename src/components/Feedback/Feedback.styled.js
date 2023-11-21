@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import RightArrow from "../../assets/images/feedback/right-arrow-alt.svg?react";
-import LeftArrow from "../../assets/images/feedback/left-arrow-alt.svg?react";
-import { flexSpaceBetween } from "../../helpers/styles/fragments";
+import RightArrow from "@/assets/images/feedback/right-arrow-alt.svg?react";
+import LeftArrow from "@/assets/images/feedback/left-arrow-alt.svg?react";
+import { flexSpaceBetween } from "@/helpers/styles/fragments";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -24,10 +24,11 @@ export const FeedbackList = styled(Swiper)`
 `;
 export const FeedbackItem = styled(SwiperSlide)`
   padding: ${({ theme }) => theme.spacing(9)};
+  width: calc((100% - 302px) / 3) !important;
   border-radius: ${({ theme }) => theme.spacing(4)};
   border: 1px solid ${({ theme }) => theme.colors.borderCards};
   box-shadow: ${({ theme }) => theme.shadows.primary};
-  width: calc((100% - 302px) / 3) !important;
+  background-color: ${({ theme }) => theme.colors.body};
 `;
 export const ContentContainer = styled.div`
   margin-top: ${({ theme }) => theme.spacing(8)};

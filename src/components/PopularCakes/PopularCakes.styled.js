@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { flexSpaceBetween } from "@/helpers/styles/fragments";
-import RightArrow from "../../assets/images/popularCakes/right-arrow-alt.svg?react";
-import Basket from "../../assets/images/popularCakes/basket.svg?react";
-import LookEverything from "../../assets/images/popularCakes/lookAtEverythingArrow.svg?react";
+import RightArrow from "@/assets/images/popularCakes/right-arrow-alt.svg?react";
+import Basket from "@/assets/images/popularCakes/basket.svg?react";
+import LookEverything from "@/assets/images/popularCakes/lookAtEverythingArrow.svg?react";
 import { NavLink } from "react-router-dom";
 
 export const PopurSection = styled.section`

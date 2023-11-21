@@ -1,5 +1,6 @@
-import Avatar from "../../assets/delete/Ellipse 1.jpg";
-import Stars from "../../assets/delete/Frame 6.svg";
+import Avatar from "@/assets/delete/Ellipse 1.jpg";
+import Stars from "@/assets/delete/Frame 6.svg";
+import { useRef } from "react";
 import "swiper/css/navigation";
 import { Navigation, Keyboard } from "swiper/modules";
 
@@ -20,7 +21,8 @@ import {
   SliderIconRight,
   UserContantContainer,
 } from "./Feedback.styled";
-import { useRef } from "react";
+
+
 const Feedback = () => {
   const swiperRef = useRef();
 

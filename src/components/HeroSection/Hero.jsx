@@ -44,7 +44,6 @@ const Hero = () => {
             об'єднуються в чудових десертах, створених з найкращих інгредієнтів
             та любові до кулінарного мистецтва.
           </TextHeroSecondary>
-
           <Button text={"Каталог"} variant={"hero"} />
         </ContentHero>
         <ImagesWrapper>
