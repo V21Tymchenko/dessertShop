@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import AddFavorite from "../../assets/images/header/heart.svg?react";
-import AddInBasket from "../../assets/images/header/basket.svg?react";
-import UserIcon from "../../assets/images/header/user.svg?react";
-import InstagramIcon from "../../assets/images/header/instagram.svg?react";
-import TelegramIcon from "../../assets/images/header/telelgram.svg?react";
-import IconForSearch from "../../assets/images/header/search.svg?react";
+import AddFavorite from "@/assets/images/header/heart.svg?react";
+import AddInBasket from "@/assets/images/header/basket.svg?react";
+import UserIcon from "@/assets/images/header/user.svg?react";
+import InstagramIcon from "@/assets/images/header/instagram.svg?react";
+import TelegramIcon from "@/assets/images/header/telelgram.svg?react";
+import IconForSearch from "@/assets/images/header/search.svg?react";
 
 export const Header = styled.header`
   display: flex;

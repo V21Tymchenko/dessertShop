@@ -60,4 +60,10 @@ export const ButtonStyled = styled.button`
         background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
       }
     `}
+     ${({ $variant }) =>
+    $variant === "input" &&
+    css`
+      max-width: 100%;
+      margin-top: 48px;
+    `}
 `;

@@ -3,7 +3,7 @@ export const size = {
   maxMobile: '767px',
   minTablet: '768px',
   maxTablet: '1271px',
-  desktop: '1272px',
+  desktop: '1304px',
 };
 
  const breakpoints = {
