@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter, flexSpaceBetween } from "../../helpers/styles/fragments";
+import { flexCenter, flexSpaceBetween } from "@/helpers/styles/fragments";
 
 export const CakesCategorySection = styled.section`
   margin-top: 73px;
@@ -31,7 +31,6 @@ export const CakesCategoryItem = styled.li`
     background-color: ${({ theme }) => theme.colors.active};
   }
 `;
-
 export const CakesCategoryText = styled.p`
   margin-top: 16px;
   text-align: center;

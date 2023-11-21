@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import Instagram from "../../assets/images/footer/instagram.svg?react";
-import Phone from "../../assets/images/footer/phone.svg?react";
+import Instagram from "@/assets/images/footer/instagram.svg?react";
+import Phone from "@/assets/images/footer/phone.svg?react";
 
 export const ContainerFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer};
   padding-top: ${({ theme }) => theme.spacing(14)};
   padding-bottom: ${({ theme }) => theme.spacing(8)};
+  margin-top: 130px;
 `;
 export const FooterLogo = styled.img`
   margin-bottom: ${({ theme }) => theme.spacing(4)};

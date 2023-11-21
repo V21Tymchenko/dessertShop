@@ -5,7 +5,6 @@ const Button = ({
   onClick = null,
   text,
   children,
-  // img = null,
   type = "button",
   variant = null,
   disabled = false,
@@ -19,7 +18,6 @@ const Button = ({
     >
       {text}
       {children}
-      {/* {img} */}
     </ButtonStyled>
   );
 };
@@ -27,10 +25,10 @@ const Button = ({
 Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
-  // img: PropTypes.element,
   children: PropTypes.node,
   text: PropTypes.string.isRequired,
   type: PropTypes.string,
   variant: PropTypes.string,
 };
+
 export default Button;
