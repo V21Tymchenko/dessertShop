@@ -19,14 +19,19 @@ import {
 } from "./MainHeader.styled";
 import AuthModal from "@/components/ModalWindows/AuthModal/AuthModal";
 import { useState } from "react";
+import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 
 const MainHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(prev => !prev);
-
   };
+
+  const toggleBasketModal = () => {
+    setIsBasketOpen(prev => !prev)
+  }
 
 
 
@@ -46,10 +51,13 @@ const MainHeader = () => {
           <HeaderIconLink to="favorite">
             <FavoriteIcon />
           </HeaderIconLink>
-          <HeaderIconButton type="button">
+          <HeaderIconButton type="button" onClick={toggleBasketModal}>
             {" "}
             <BasketIcon />
           </HeaderIconButton>
+          {isBasketOpen && (
+              <ModalBasket closeModal={toggleBasketModal} />
+            )}   
 
           <HeaderIconButton type="button" onClick={toggleModal}>
             {" "}
