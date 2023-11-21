@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import bcgImage from "@/assets/images/homePage/Vector.webp";
 import bcgImageRetina from "@/assets/images/homePage/Vector_2x.webp";

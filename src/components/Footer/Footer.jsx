@@ -7,7 +7,9 @@ import {
   FooterListItem,
   FooterListLink,
   FooterLogo,
+  InstagramIcon,
   MainContainerInfo,
+  PhoneIcon,
   Title2,
   Title3,
   Title4,
@@ -80,11 +82,13 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   title="Link to Instagram"
                 >
+                  <InstagramIcon />
                   Instagram
                 </FooterLink>
               </FooterListItem>
               <FooterListItem>
                 <FooterLink href="tel:+380678887744">
+                  <PhoneIcon />
                   +380 67 888 77 44
                 </FooterLink>
               </FooterListItem>
