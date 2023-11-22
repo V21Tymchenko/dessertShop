@@ -24,7 +24,6 @@ export const ButtonStyled = styled.button`
 
   &:focus,
   &:hover {
-    /* transform: scale(1.01); */
     background-color: ${({ theme }) => theme.colors.hoverButtons};
   }
 

@@ -20,6 +20,6 @@ export const HeaderNavLink = styled(NavLink)`
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.text};
 `;
-export const Header = styled.header`
+export const HeaderNav = styled.nav`
   margin-top: ${({ theme }) => theme.spacing(6)};
 `;
