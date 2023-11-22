@@ -5,12 +5,15 @@ import UserIcon from "@/assets/images/header/user.svg?react";
 import InstagramIcon from "@/assets/images/header/instagram.svg?react";
 import TelegramIcon from "@/assets/images/header/telelgram.svg?react";
 import IconForSearch from "@/assets/images/header/search.svg?react";
+import { flexSpaceBetween } from "@/helpers/styles/fragments";
 
 export const Header = styled.header`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   margin-top: ${({ theme }) => theme.spacing(12)};
+`;
+export const HeaderContainer = styled.div`
+  ${flexSpaceBetween}
 `;
 export const UserMenu = styled.div`
   display: flex;

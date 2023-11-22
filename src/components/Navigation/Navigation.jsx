@@ -1,6 +1,6 @@
 import navItems from "@/helpers/navItems";
 import {
-  Header,
+  HeaderNav,
   HeaderNavItem,
   HeaderNavLink,
   HeaderNavList,
@@ -8,17 +8,15 @@ import {
 
 const Navigation = () => {
   return (
-    <Header>
-      <nav>
-        <HeaderNavList>
-          {navItems.map(({ href, text }) => (
-            <HeaderNavItem key={href}>
-              <HeaderNavLink to={href}>{text}</HeaderNavLink>
-            </HeaderNavItem>
-          ))}
-        </HeaderNavList>
-      </nav>
-    </Header>
+    <HeaderNav>
+      <HeaderNavList>
+        {navItems.map(({ href, text }) => (
+          <HeaderNavItem key={href}>
+            <HeaderNavLink to={href}>{text}</HeaderNavLink>
+          </HeaderNavItem>
+        ))}
+      </HeaderNavList>
+    </HeaderNav>
   );
 };
 export default Navigation;
