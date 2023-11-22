@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const CakesCardWrapper = styled.div`
+export const CakesCardWrappers = styled.div`
   display: flex;
   gap: 40px;
+  margin-top: 120px;
 `;
 
-export const CakesCard = styled(Link)`
+export const CardWrapper = styled(Link)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  gap: 40px;
 
   width: 616px;
   height: 555px;
@@ -22,13 +23,18 @@ export const CakesCard = styled(Link)`
   cursor: pointer;
 `;
 
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
 export const TitleCard = styled.h3`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-size: ${({ theme }) => theme.fontSizes.l};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 41.6px;
-  /* margin-bottom: 32px; */
 `;
 
 export const TextCard = styled.p`
@@ -44,5 +50,6 @@ export const TextCard = styled.p`
 export const StyledPicture = styled.picture`
   width: 477px;
   height: 325px;
+  margin-left: 8%;
   border-radius: ${({ theme }) => theme.radii.cards};
 `;
