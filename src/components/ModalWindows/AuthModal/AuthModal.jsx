@@ -19,6 +19,11 @@ const AuthModal = ({ closeModal }) => {
         setActiveButton(buttonType);
     };
 
+    const handleForgotPasswordClick = () => {
+        setActiveButton('register');
+    };
+
+
     return (
         <AuthBackdrop>
             <AuthorizationModal>
@@ -46,7 +51,7 @@ const AuthModal = ({ closeModal }) => {
                     </AuthButton>               
                 </ButtonWrapper>
                 <AuthWrapper>
-                {activeButton === 'register' ? <RegistrationForm /> : <SigninForm />}
+                {activeButton === 'register' ? <RegistrationForm /> : <SigninForm onForgotPasswordClick={handleForgotPasswordClick}/>}
                 </AuthWrapper>
             </AuthorizationModal>
         </AuthBackdrop>

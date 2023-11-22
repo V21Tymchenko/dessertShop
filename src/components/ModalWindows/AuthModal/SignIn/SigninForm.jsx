@@ -13,7 +13,7 @@ import{
 } from './SigninForm.styled';
 import sprite from '@/assets/images/modal/sprite-eye.svg';
 
-const SigninForm = () => {
+const SigninForm = ({ onForgotPasswordClick }) => {
     const [showPassword, setShowPassword] = useState(false);
    
     const initialValues = {
@@ -60,7 +60,7 @@ const SigninForm = () => {
                                             </PasswordTogglerIcon>
                                         </PasswordToggler>
                                 </WrapperInput>
-                                <SigninTextBtn type='button' $variant={'cardOpacity'} >Забули пароль</SigninTextBtn>
+                                <SigninTextBtn type='button' $variant={'cardOpacity'} onClick={onForgotPasswordClick}>Забули пароль</SigninTextBtn>
                                 <SigninSubmitBtn type='submit' $variant={"hero"}>Увійти</SigninSubmitBtn>
 
                                 </WrapperInputField>

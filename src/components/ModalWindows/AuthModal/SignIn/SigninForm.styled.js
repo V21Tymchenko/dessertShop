@@ -14,7 +14,7 @@ margin-top: ${({ theme }) => theme.spacing(15)};
 
 export const FormContainer = styled.div`
 ${ flexCenter }
-margin: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)} ; 
+margin: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(0)} ${({ theme }) => theme.spacing(4)} ; 
 
 `
 export const WrapperInputField = styled.div`
