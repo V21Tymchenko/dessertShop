@@ -17,8 +17,23 @@ import {
   TelegramLink,
   UserMenu,
 } from "./MainHeader.styled";
+import AuthModal from "@/components/ModalWindows/AuthModal/AuthModal";
+import { useState } from "react";
+import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 
 const MainHeader = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(prev => !prev);
+  };
+
+  const toggleBasketModal = () => {
+    setIsBasketOpen(prev => !prev)
+  }
+
   return (
     <Header>
       <Link to="/">
@@ -35,14 +50,22 @@ const MainHeader = () => {
           <HeaderIconLink to="favorite">
             <FavoriteIcon />
           </HeaderIconLink>
-          <HeaderIconButton type="button">
+          <HeaderIconButton type="button" onClick={toggleBasketModal}>
             {" "}
             <BasketIcon />
-          </HeaderIconButton>
-          <HeaderIconButton type="button">
+          </HeaderIconButton>         
+           {isBasketOpen && (
+              <ModalBasket closeModal={toggleBasketModal} />
+            )}   
+
+          <HeaderIconButton type="button" onClick={toggleModal}>
             {" "}
+                 
             <AuthorizationIcon />
           </HeaderIconButton>
+          {isModalOpen && (
+              <AuthModal closeModal={toggleModal} />
+            )}   
         </UserMenu>
         <ContainerContacts>
           <HeaderIconLink
