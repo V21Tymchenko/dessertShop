@@ -7,7 +7,6 @@ import "swiper/css";
 
 export const FeedbackSection = styled.section`
   margin-top: ${({ theme }) => theme.spacing(30)};
-  overflow: hidden;
 `;
 
 export const MainTitle = styled.h2`
@@ -48,6 +47,8 @@ export const SliderButton = styled.button`
   background-color: ${({ theme }) => theme.colors.buttons};
   border: ${({ theme }) => theme.borders.none};
   border-radius: ${({ theme }) => theme.radii.button};
+  transition: ${({ theme }) => theme.transitions.primary};
+  cursor: pointer;
   &:hover,
   &:focus {
     background-color: ${({ theme }) => theme.colors.active};

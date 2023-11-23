@@ -15,6 +15,7 @@ import {
   Title4,
 } from "./Footer.styled";
 import Container from "../Container";
+
 const Footer = () => {
   return (
     <ContainerFooter>

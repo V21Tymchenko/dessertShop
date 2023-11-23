@@ -15,7 +15,7 @@ export const MainTitle = styled.h2`
   line-height: ${({ theme }) => theme.lineHeights.mediumTitle};
 `;
 export const StyledFeedbackForm = styled(Form)`
-  margin-top: ${({ theme }) => theme.spacing(10)};
+  margin-top: 42px;
 `;
 export const StyledInputForm = styled(Field)`
   width: 396px;
@@ -27,8 +27,17 @@ export const StyledInputForm = styled(Field)`
   background: var(--base-colors-white, #fff);
   border: ${({ theme }) => theme.borders.none};
   box-shadow: ${({ theme }) => theme.shadows.primary};
+  transition: ${({ theme }) => theme.transitions.primary};
+  outline: none;
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
+    box-shadow: 1px 1px 2px 0 ${({ theme }) => theme.colors.hoverButtons};
+  }
   &:not(:first-child) {
     margin-top: 24px;
+  }
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.inputText};
   }
 `;
 export const FormConytainer = styled.div`

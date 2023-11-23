@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import bcgImage from "@/assets/images/homePage/Vector.webp";
 import bcgImageRetina from "@/assets/images/homePage/Vector_2x.webp";
 
@@ -7,7 +6,7 @@ export const WrapperHero = styled.section`
   display: flex;
   flex-direction: column;
   gap: 72px;
-  max-width: 1272px;
+  margin-top: ${({ theme }) => theme.spacing(6)};
 `;
 
 export const ContentTextTop = styled.div`
@@ -26,11 +25,8 @@ export const ContentTextTop = styled.div`
 `;
 
 export const TextHeroSecondary = styled.p`
-  color: ${({ theme }) => theme.colors.text};
-
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
   line-height: 22.4px;
 `;
 
@@ -43,12 +39,11 @@ export const ContentHero = styled.div`
 `;
 
 export const TextHero = styled.h1`
-  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: ${({ theme }) => theme.spacing(8)};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-size: ${({ theme }) => theme.fontSizes.xxl};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 57.6px;
-  margin-bottom: 32px;
 `;
 
 export const ImagesWrapper = styled.div`
@@ -72,48 +67,26 @@ export const BackgroundImg = styled.div`
   background-repeat: no-repeat;
 
   background-image: url(${bcgImage});
-  /* repeat-y 100% 0 */
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background-image: url(${bcgImageRetina});
   }
-
-  /* @media only screen and (min-width: 768px) {
-    padding: 8px 0;
-  }
-
-  @media only screen and (min-width: 1280px) {
-    padding: 12px 0;
-
-    background-image: url(${bcgImage});
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${bcgImageRetina});
-    }
-  } */
 `;
 
 export const StyledLink = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:focus,
-  &:hover {
-    transform: scale(1.01);
-  }
-`;
-
-export const StyledSpan = styled.span`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   text-decoration-line: underline;
-  line-height: 22.4px;
+  padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(1)};
+  border-radius: ${({ theme }) => theme.radii.button};
+  transition: ${({ theme }) => theme.transitions.primary};
+
+  &:focus,
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
+  }
 `;

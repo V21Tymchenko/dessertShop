@@ -1,4 +1,6 @@
 import Button from "../Button/Button";
+import cakes from "@/assets/images/homePage/Cakes.webp";
+import cakesRetina from "@/assets/images/homePage/Cakes_2x.webp";
 import {
   BackgroundImg,
   ContentHero,
@@ -7,14 +9,11 @@ import {
   ImagesWrapper,
   StyledLink,
   StyledPicture,
-  StyledSpan,
   TextHero,
   TextHeroSecondary,
   WrapperHero,
 } from "./Hero.styled";
 
-import cakes from "@/assets/images/homePage/Cakes.webp";
-import cakesRetina from "@/assets/images/homePage/Cakes_2x.webp";
 
 const Hero = () => {
   return (
@@ -30,7 +29,7 @@ const Hero = () => {
           rel="noopener noreferrer"
           title="Link to Instagram"
         >
-          <StyledSpan>Instagram</StyledSpan>
+         Instagram
         </StyledLink>
       </ContentTextTop>
 

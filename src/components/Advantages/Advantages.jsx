@@ -6,9 +6,9 @@ import {
   OurAdvantageItem,
   OurAdvantageList,
   OurAdvantageSection,
-  OurAdvantageText,
   OurAdvantageTitle,
 } from "./Advantages.styled";
+
 const Advantages = () => {
   return (
     <OurAdvantageSection>
@@ -17,30 +17,30 @@ const Advantages = () => {
           <img src={advantageFirst} alt="Різноманітність смаків" />
           <div>
             <OurAdvantageTitle>Різноманітність смаків</OurAdvantageTitle>
-            <OurAdvantageText>Широкий вибір асортименту</OurAdvantageText>
+            <p>Широкий вибір асортименту</p>
           </div>
         </OurAdvantageItem>
         <OurAdvantageItem>
           <img src={advantageSecond} alt="Ексклюзивність" />
           <div>
             <OurAdvantageTitle>Ексклюзивність</OurAdvantageTitle>
-            <OurAdvantageText>Унікальний підхід до дизайну</OurAdvantageText>
+            <p>Унікальний підхід до дизайну</p>
           </div>
         </OurAdvantageItem>
         <OurAdvantageItem>
           <img src={advantageThird} alt="Гарантія доставки" />
           <div>
             <OurAdvantageTitle>Гарантія доставки</OurAdvantageTitle>
-            <OurAdvantageText>
+            <p>
               Готові вчасно і доставлені в термін
-            </OurAdvantageText>
+            </p>
           </div>
         </OurAdvantageItem>
         <OurAdvantageItem>
           <img src={advantageFourth} alt="Якість та Свіжість" />
           <div>
             <OurAdvantageTitle>Якість та Свіжість</OurAdvantageTitle>
-            <OurAdvantageText>Найкращі інгредієнти</OurAdvantageText>
+            <p>Найкращі інгредієнти</p>
           </div>
         </OurAdvantageItem>
       </OurAdvantageList>

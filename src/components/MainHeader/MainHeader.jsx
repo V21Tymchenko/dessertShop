@@ -4,6 +4,8 @@ import logo from "@/assets/images/лого.svg";
 import {
   AuthorizationIcon,
   BasketIcon,
+  ButtonLanguage,
+  ButtonsContainer,
   ContainerContacts,
   ContainerUserMenu,
   FavoriteIcon,
@@ -87,8 +89,10 @@ const MainHeader = () => {
             >
               <TelegramLink />
             </HeaderIconLink>
-            <button type="button">UA</button>
-            <button type="button">ENG</button>
+            <ButtonsContainer>
+              <ButtonLanguage type="button">UA</ButtonLanguage>
+              <ButtonLanguage type="button">ENG</ButtonLanguage>
+            </ButtonsContainer>
           </ContainerContacts>
         </ContainerUserMenu>
       </HeaderContainer>

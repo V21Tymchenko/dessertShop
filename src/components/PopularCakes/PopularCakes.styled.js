@@ -13,7 +13,6 @@ export const PopurContainer = styled.div`
 `;
 export const PopularList = styled.ul`
   display: flex;
-  align-items: center;
   margin-top: 41px;
   gap: ${({ theme }) => theme.spacing(10)};
 `;
@@ -21,7 +20,7 @@ export const PopularItem = styled.li`
   display: flex;
   flex-direction: column;
   border-radius: ${({ theme }) => theme.spacing(2)};
-  width: calc((100% - 40px) / 4);
+  width: calc((100% - 120px) / 4);
   box-shadow: ${({ theme }) => theme.shadows.primary};
 `;
 export const MainTitle = styled.h2`
@@ -62,11 +61,12 @@ export const LinkToPopular = styled(NavLink)`
   display: flex;
   gap: ${({ theme }) => theme.spacing(2)};
   padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(6)};
-  
+
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.text};
   border-radius: ${({ theme }) => theme.spacing(3)};
+  transition: ${({ theme }) => theme.transitions.primary};
 
   &:focus,
   &:hover {

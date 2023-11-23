@@ -1,22 +1,21 @@
+import cakes from "@/assets/images/CakesCard/Cakes.webp";
+import cakesRetina from "@/assets/images/CakesCard/Cake_2x.webp";
+import newCakes from "@/assets/images/CakesCard/NewCakes.webp";
+import newCakesRetina from "@/assets/images/CakesCard/NewCakes_2x.webp";
 import {
   CakesCardWrappers,
-  CardWrapper,
+  CardWrapperConstructor,
+  CardWrapperNew,
   StyledPicture,
   TextCard,
   TextWrapper,
   TitleCard,
 } from "./CakesCard.styled";
 
-//Images
-import cakes from "@/assets/images/CakesCard/Cakes.webp";
-import cakesRetina from "@/assets/images/CakesCard/Cakes_2x.webp";
-import newCakes from "@/assets/images/CakesCard/NewCakes.webp";
-import newCakesRetina from "@/assets/images/CakesCard/NewCakes_2x.webp";
-
 const CakesCard = () => {
   return (
     <CakesCardWrappers>
-      <CardWrapper>
+      <CardWrapperConstructor>
         <TextWrapper>
           <TitleCard>Конструктор тортиків</TitleCard>
           <TextCard>Збери свій ідеальний тортик сам!</TextCard>
@@ -29,9 +28,9 @@ const CakesCard = () => {
           />
           <img src={cakes} alt="Images Cakes" loading="lazy" />
         </StyledPicture>
-      </CardWrapper>
+      </CardWrapperConstructor>
 
-      <CardWrapper>
+      <CardWrapperNew>
         <TextWrapper>
           <TitleCard>Новинки</TitleCard>
           <TextCard>
@@ -48,7 +47,7 @@ const CakesCard = () => {
           />
           <img src={newCakes} alt="Images Cakes" loading="lazy" />
         </StyledPicture>
-      </CardWrapper>
+      </CardWrapperNew>
     </CakesCardWrappers>
   );
 };
