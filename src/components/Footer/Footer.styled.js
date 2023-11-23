@@ -44,6 +44,7 @@ export const Title4 = styled.h4`
 export const FooterListItem = styled.li`
   padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(2)};
   border-radius: ${({ theme }) => theme.spacing(3)};
+  transition: ${({ theme }) => theme.transitions.primary};
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }

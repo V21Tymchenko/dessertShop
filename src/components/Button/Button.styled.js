@@ -15,8 +15,8 @@ export const ButtonStyled = styled.button`
   text-align: center;
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  line-height: 25.2px;
   color: ${({ theme }) => theme.colors.body};
+  transition: ${({ theme }) => theme.transitions.primary};
 
   border: none;
   cursor: pointer;
@@ -50,7 +50,6 @@ export const ButtonStyled = styled.button`
     css`
       font-weight: ${({ theme }) => theme.fontWeights.semibold};
       color: ${({ theme }) => theme.colors.text};
-      font-weight: ${({ theme }) => theme.fontWeights.semibold};
 
       background-color: ${({ theme }) => theme.colors.body};
       border: 1px solid ${({ theme }) => theme.colors.buttons};

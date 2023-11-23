@@ -6,11 +6,12 @@ import InstagramIcon from "@/assets/images/header/instagram.svg?react";
 import TelegramIcon from "@/assets/images/header/telelgram.svg?react";
 import IconForSearch from "@/assets/images/header/search.svg?react";
 import { flexSpaceBetween } from "@/helpers/styles/fragments";
+import { generalIconStyle, iconContainer } from "@/helpers/styles/fragments";
 
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
-  margin-top: ${({ theme }) => theme.spacing(12)};
+  padding-top: ${({ theme }) => theme.spacing(12)};
 `;
 export const HeaderContainer = styled.div`
   ${flexSpaceBetween}
@@ -24,7 +25,7 @@ export const UserMenu = styled.div`
 export const ContainerContacts = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 `;
 export const ContainerUserMenu = styled.div`
   display: flex;
@@ -40,13 +41,19 @@ export const HeaderInput = styled.input`
   border-radius: ${p => p.theme.radii.button};
   background: ${p => p.theme.colors.input};
   border: ${p => p.theme.borders.none};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  transition: ${({ theme }) => theme.transitions.primary};
+  outline: none;
   ::placeholder {
     color: ${({ theme }) => theme.colors.inputText};
     font-family: ${({ theme }) => theme.colors.primary};
     font-size: ${({ theme }) => theme.fontSizes.xs};
   }
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
+    box-shadow: 1px 1px 2px 0 ${({ theme }) => theme.colors.hoverButtons};
+  }
 `;
-
 export const SearchButton = styled.button`
   display: flex;
   -webkit-box-align: center;
@@ -66,66 +73,44 @@ export const SearchButton = styled.button`
   transition: all 250ms ease 0s;
 `;
 export const SearchIcon = styled(IconForSearch)`
-  color: inherit;
-  fill: inherit;
-  margin: 0 auto;
-  height: ${({ theme }) => theme.spacing(6)};
-  width: ${({ theme }) => theme.spacing(6)};
+  ${generalIconStyle}
 `;
 export const FavoriteIcon = styled(AddFavorite)`
-  color: inherit;
-  fill: inherit;
-  margin: 0 auto;
-  height: ${({ theme }) => theme.spacing(6)};
-  width: ${({ theme }) => theme.spacing(6)};
+  ${generalIconStyle}
 `;
 export const BasketIcon = styled(AddInBasket)`
-  color: inherit;
-  fill: inherit;
-  margin: 0 auto;
-  height: ${({ theme }) => theme.spacing(6)};
-  width: ${({ theme }) => theme.spacing(6)};
+  ${generalIconStyle}
 `;
 export const AuthorizationIcon = styled(UserIcon)`
-  color: inherit;
-  fill: inherit;
-  margin: 0 auto;
-  height: ${({ theme }) => theme.spacing(6)};
-  width: ${({ theme }) => theme.spacing(6)};
+  ${generalIconStyle}
 `;
 export const InstagramLink = styled(InstagramIcon)`
-  color: inherit;
-  fill: inherit;
-  margin: 0 auto;
-  height: ${({ theme }) => theme.spacing(6)};
-  width: ${({ theme }) => theme.spacing(6)};
+  ${generalIconStyle}
 `;
 export const TelegramLink = styled(TelegramIcon)`
-  color: inherit;
-  fill: inherit;
-  margin: 0 auto;
-  height: ${({ theme }) => theme.spacing(6)};
-  width: ${({ theme }) => theme.spacing(6)};
+  ${generalIconStyle}
 `;
 export const HeaderIconButton = styled.button`
-  padding: ${({ theme }) => theme.spacing(1)};
-  width: ${({ theme }) => theme.spacing(12)};
-  height: ${({ theme }) => theme.spacing(12)};
-  border-radius: ${({ theme }) => theme.radii.button};
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
-    cursor: pointer;
-  }
+  ${iconContainer}
 `;
 export const HeaderIconLink = styled.a`
+  ${iconContainer}
+`;
+export const ButtonsContainer = styled.div`
   display: flex;
-  align-items: center;
-  padding: ${({ theme }) => theme.spacing(1)};
-  width: ${({ theme }) => theme.spacing(12)};
-  height: ${({ theme }) => theme.spacing(12)};
+`;
+export const ButtonLanguage = styled.button`
+  width: 54px;
+  height: 48px;
+  padding: 12px 8px;
   border-radius: ${({ theme }) => theme.radii.button};
-  &:hover {
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  transition: ${({ theme }) => theme.transitions.primary};
+  cursor: pointer;
+  &:hover,
+  &:focus {
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }
-  cursor: pointer;
 `;

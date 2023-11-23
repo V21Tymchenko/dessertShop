@@ -1,17 +1,16 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const CakesCardWrappers = styled.div`
+export const CakesCardWrappers = styled.section`
   display: flex;
   gap: 40px;
-  margin-top: 120px;
+  margin-top: 86px;
 `;
 
-export const CardWrapper = styled(Link)`
+export const CardWrapperConstructor = styled(Link)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 40px;
+  gap: 49.5px;
 
   width: 616px;
   height: 555px;
@@ -19,8 +18,16 @@ export const CardWrapper = styled(Link)`
 
   border-radius: ${({ theme }) => theme.radii.cards};
   box-shadow: ${({ theme }) => theme.shadows.primary};
+  transition: ${({ theme }) => theme.transitions.primary};
 
   cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.hoverButtons};
+  }
+`;
+export const CardWrapperNew = styled(CardWrapperConstructor)`
+  gap: 29px;
 `;
 
 export const TextWrapper = styled.div`
@@ -34,7 +41,7 @@ export const TitleCard = styled.h3`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-size: ${({ theme }) => theme.fontSizes.l};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  line-height: 41.6px;
+  line-height: ${({ theme }) => theme.lineHeights.mediumTitle};
 `;
 
 export const TextCard = styled.p`
@@ -43,8 +50,6 @@ export const TextCard = styled.p`
 
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  line-height: 22.4px;
 `;
 
 export const StyledPicture = styled.picture`

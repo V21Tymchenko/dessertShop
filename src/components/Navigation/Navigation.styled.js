@@ -9,7 +9,9 @@ export const HeaderNavList = styled.ul`
 export const HeaderNavItem = styled.li`
   padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(4)};
   border-radius: ${({ theme }) => theme.radii.button};
-  &:hover {
+  transition: ${({ theme }) => theme.transitions.primary};
+  &:hover,
+  &:focus {
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }
   cursor: pointer;

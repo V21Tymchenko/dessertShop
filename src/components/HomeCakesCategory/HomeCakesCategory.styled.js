@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import { flexCenter, flexSpaceBetween } from "@/helpers/styles/fragments";
+import { flexCenter } from "@/helpers/styles/fragments";
 
 export const CakesCategorySection = styled.section`
-  margin-top: 73px;
+  margin-top: 170px;
+  padding-bottom: ${({ theme }) => theme.spacing(3)};
 `;
 
 export const CakesCategoryTitle = styled.h2`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-size: ${({ theme }) => theme.fontSizes.xl};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.text};
   line-height: ${({ theme }) => theme.lineHeights.mediumTitle};
   margin-bottom: ${({ theme }) => theme.spacing(10)};
 `;
 export const CakesCategoryList = styled.ul`
-  ${flexSpaceBetween}
+  display: flex;
   gap: 40px;
 `;
 export const CakesCategoryItem = styled.li`
@@ -24,7 +24,9 @@ export const CakesCategoryItem = styled.li`
   width: calc((100% - 40px) / 4);
   ${flexCenter}
   box-shadow: ${({ theme }) => theme.shadows.primary};
-  &:hover {
+  transition: ${({ theme }) => theme.transitions.primary};
+  &:hover,
+  &:focus {
     background-color: ${({ theme }) => theme.colors.hover};
   }
   &:active {
@@ -34,9 +36,7 @@ export const CakesCategoryItem = styled.li`
 export const CakesCategoryText = styled.p`
   margin-top: 16px;
   text-align: center;
-  font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.text};
 `;
-

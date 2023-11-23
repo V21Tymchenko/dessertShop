@@ -11,15 +11,15 @@ export const OurAdvantageItem = styled.li`
 `;
 
 export const OurAdvantageTitle = styled.h2`
-  font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: ${({ theme }) => theme.fontSizes.m};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;
 
-export const OurAdvantageText = styled.p`
-  font-family: ${({ theme }) => theme.fonts.secondary};
-`;
-
 export const OurAdvantageSection = styled.section`
-  margin-top: 132px;
+  margin-top: ${({ theme }) => theme.spacing(30)};
+  padding-top: ${({ theme }) => theme.spacing(10)};
+  padding-bottom: ${({ theme }) => theme.spacing(10)};
+
+  border-top: 1px solid ${({ theme }) => theme.colors.footer};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.footer};
 `;
