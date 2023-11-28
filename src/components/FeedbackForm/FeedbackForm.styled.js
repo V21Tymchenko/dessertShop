@@ -30,8 +30,7 @@ export const StyledInputForm = styled(Field)`
   transition: ${({ theme }) => theme.transitions.primary};
   outline: none;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
-    box-shadow: 1px 1px 2px 0 ${({ theme }) => theme.colors.hoverButtons};
+    border: 1px solid ${({ theme }) => theme.colors.text};
   }
   &:not(:first-child) {
     margin-top: 24px;

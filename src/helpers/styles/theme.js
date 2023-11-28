@@ -12,6 +12,7 @@ const theme = {
     hoverHeaderIcon: "#fff0f5",
     borderCards: "#ffeb98",
     accentBlue: " #cddafa",
+    borderInput: "#9a9a9a",
   },
   spacing: value => `${4 * value}px`,
   fonts: {
@@ -54,7 +55,7 @@ const theme = {
     primary: "2px 4px 16px 0px rgba(115, 115, 115, 0.20)",
   },
   transitions: {
-    primary: "transform 250ms cubic-bezier(0.4, 0, 0.2, 1)",
+    primary: "all 250ms cubic-bezier(0.4, 0, 0.2, 1)",
   },
 };
 

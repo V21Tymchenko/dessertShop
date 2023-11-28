@@ -10,7 +10,6 @@ const SharedLayout = () => {
         <MainHeader>
           <Outlet />
         </MainHeader>
-
         <main>
           <Outlet />
         </main>

@@ -12,7 +12,7 @@ export const flexSpaceBetween = css`
 `;
 export const generalIconStyle = css`
   color: inherit;
-  fill: inherit;
+  fill: currentColor;
   margin: 0 auto;
   height: ${({ theme }) => theme.spacing(6)};
   width: ${({ theme }) => theme.spacing(6)};
