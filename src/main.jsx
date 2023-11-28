@@ -11,7 +11,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter basename="/dessertShop">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ThemeProvider>
