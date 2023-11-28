@@ -64,4 +64,24 @@ export const ButtonStyled = styled.button`
       max-width: 100%;
       margin-top: 48px;
     `}
+         ${({ $variant }) =>
+    $variant === "order" &&
+    css`
+      max-width: 100%;
+      margin-top: 40px;
+    `}
+    ${({ $variant }) =>
+    $variant === "backToSHop" &&
+    css`
+      max-width: 100%;
+      background-color: transparent;
+      margin-top: 12px;
+      color: #121212;
+      font-size: ${({ theme }) => theme.fontSizes.xs};
+      font-weight: ${({ theme }) => theme.fontWeights.semibold};
+      &:hover,
+      &:focus {
+        background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
+      }
+    `}
 `;
