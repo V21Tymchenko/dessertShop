@@ -13,7 +13,6 @@ export const StyledForm = styled(Form)`
   flex-direction: column;
 
   width: 616px;
-  margin-top: ${({ theme }) => theme.spacing(9)};
 `;
 
 export const ContainerRadioButtons = styled.div`

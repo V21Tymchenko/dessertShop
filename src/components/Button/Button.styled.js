@@ -32,10 +32,6 @@ export const ButtonStyled = styled.button`
     background-color: ${({ theme }) => theme.colors.input};
     cursor: default;
 
-    &:focus,
-    &:hover {
-      transform: scale(1);
-    }
   }
 
   ${({ $variant }) =>
@@ -83,5 +79,11 @@ export const ButtonStyled = styled.button`
       &:focus {
         background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
       }
+    `}
+     ${({ $variant }) =>
+    $variant === "authorization" &&
+    css`
+      max-width: 180px;
+      margin-top: 32px;
     `}
 `;

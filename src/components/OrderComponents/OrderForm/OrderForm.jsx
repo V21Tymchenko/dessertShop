@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Formik } from "formik";
+// import UserNameForm from "../UserNameForm/UserNameForm";
+import NoAuthorizationOrder from "@/components/NoAuthorizationOrder";
 import YourOrder from "@/components/OrderComponents/YourOrder";
 import arrow from "@/assets/images/orderForm/leftArrow.svg";
 import radioIcon from "@/assets/images/orderForm/radio.svg";
@@ -20,7 +22,8 @@ import {
   RadioIconCheked,
   StyledForm,
 } from "./OrderForm.styled";
-import UserNameForm from "../UserNameForm/UserNameForm";
+
+
 
 const initialValues = {
   name: "",
@@ -45,9 +48,11 @@ const OrderForm = () => {
     <OrderContainer>
       <div>
         <OrderText>Особисті дані</OrderText>
+        <NoAuthorizationOrder />
         <Formik initialValues={initialValues}>
           <StyledForm>
-            <UserNameForm />
+            {/* <UserNameForm /> */}
+
             <ContainerRadioButtons>
               <OrderText>Адреса доставки</OrderText>
               <ContainerDeliveryInput>
