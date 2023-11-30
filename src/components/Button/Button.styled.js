@@ -21,7 +21,7 @@ export const ButtonStyled = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-
+ 
   &:focus,
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverButtons};
@@ -31,15 +31,7 @@ export const ButtonStyled = styled.button`
     opacity: ${({ $variant }) => ($variant === "dis" ? 1 : 0.5)};
     background-color: ${({ theme }) => theme.colors.input};
     cursor: default;
-
   }
-
-  ${({ $variant }) =>
-    $variant === "hero" &&
-    css`
-      max-width: 288px;
-      margin-top: 64px;
-    `}
 
   ${({ $variant }) =>
     $variant === "cardOpacity" &&
@@ -54,7 +46,7 @@ export const ButtonStyled = styled.button`
         background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
       }
     `}
-     ${({ $variant }) =>
+  ${({ $variant }) =>
     $variant === "input" &&
     css`
       max-width: 100%;

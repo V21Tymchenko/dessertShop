@@ -45,7 +45,7 @@ export const FormConytainer = styled.div`
 
 export const BackgroundImgLeft = styled.div`
   position: absolute;
-  top: -79%;
+  top: -78%;
   left: -11%;
   z-index: -1;
   height: 936.5px;
@@ -53,7 +53,7 @@ export const BackgroundImgLeft = styled.div`
 `;
 export const BackgroundImgRight = styled.div`
   position: absolute;
-  top: -92%;
+  top: -100%;
   right: -11%;
   z-index: -1;
   height: 706.5px;

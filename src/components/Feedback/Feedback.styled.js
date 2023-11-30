@@ -20,6 +20,9 @@ export const FeedbackList = styled(Swiper)`
   display: flex;
   gap: ${({ theme }) => theme.spacing(10)};
   margin-top: ${({ theme }) => theme.spacing(10)};
+
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 export const FeedbackItem = styled(SwiperSlide)`
   padding: ${({ theme }) => theme.spacing(9)};

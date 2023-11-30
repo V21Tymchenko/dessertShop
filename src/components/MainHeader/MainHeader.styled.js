@@ -50,8 +50,7 @@ export const HeaderInput = styled.input`
     font-size: ${({ theme }) => theme.fontSizes.xs};
   }
   &:focus {
-    border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
-    box-shadow: 1px 1px 2px 0 ${({ theme }) => theme.colors.hoverButtons};
+    border: 1px solid ${({ theme }) => theme.colors.text};
   }
 `;
 export const SearchButton = styled.button`

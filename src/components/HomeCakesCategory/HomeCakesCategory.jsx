@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
-import bentoCakes from "@/assets/images/category/бенто-торт.webp";
-import macaroni from "@/assets/images/category/макаруни.webp";
-import pastry from "@/assets/images/category/тістечка.webp";
-import cakes from "@/assets/images/category/торт.webp";
+import cakesCategory from "@/helpers/definitions/cakesCategory";
+
 import {
   CakesCategoryItem,
   CakesCategoryList,
@@ -13,42 +11,33 @@ import {
 
 const HomeCakesCategory = () => {
   return (
-    <>
-      <CakesCategorySection>
-        <CakesCategoryTitle>Наші смаколики</CakesCategoryTitle>
-        <CakesCategoryList>
-          <CakesCategoryItem color={"#f7d1de"}>
-            <NavLink>
-              <img src={cakes} alt="Торти" width="208px" height="200px" />
-              <CakesCategoryText>Торти на різні події</CakesCategoryText>
-            </NavLink>
-          </CakesCategoryItem>
-          <CakesCategoryItem color={"#ffeb98"}>
-            <NavLink>
-              <img
-                src={bentoCakes}
-                alt="Бенто торти"
-                width="208px"
-                height="200px"
-              />
-              <CakesCategoryText>Бенто-торти</CakesCategoryText>
-            </NavLink>
-          </CakesCategoryItem>
-          <CakesCategoryItem color={"#bff3ee"}>
-            <NavLink>
-              <img src={macaroni} alt="Макаруни" width="208px" height="200px" />
-              <CakesCategoryText>Макаруни</CakesCategoryText>
-            </NavLink>
-          </CakesCategoryItem>
-          <CakesCategoryItem color={"#cddafa"}>
-            <NavLink>
-              <img src={pastry} alt="Тістечка" width="208px" height="200px" />
-              <CakesCategoryText>Тістечка</CakesCategoryText>
-            </NavLink>
-          </CakesCategoryItem>
-        </CakesCategoryList>
-      </CakesCategorySection>
-    </>
+    <CakesCategorySection>
+      <CakesCategoryTitle>Наші смаколики</CakesCategoryTitle>
+      <CakesCategoryList>
+        {cakesCategory.filter(({ home }) => home)
+          .map(({ id, text, src, color, cakesRetina }) => (
+            <CakesCategoryItem key={id} color={color}>
+              <NavLink>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcSet={`${src} 1x, ${cakesRetina} 2x`}
+                    type="image/webp"
+                  />
+                  <img
+                    src={src}
+                    alt={text}
+                    width="208px"
+                    height="200px"
+                    loading="lazy"
+                  />
+                </picture>
+                <CakesCategoryText>{text}</CakesCategoryText>
+              </NavLink>
+            </CakesCategoryItem>
+          ))}
+      </CakesCategoryList>
+    </CakesCategorySection>
   );
 };
 export default HomeCakesCategory;
