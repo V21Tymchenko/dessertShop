@@ -1,3 +1,5 @@
+import { useState } from "react";
+import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 import Button from "@/components/Button/Button";
 import img from "@/assets/delete/фото.jpg";
 
@@ -16,16 +18,13 @@ import {
   PopurContainer,
   PopurSection,
 } from "./PopularCakes.styled";
-import { useState } from "react";
-import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 
 const PopularCakes = () => {
-
   const [isBasketOpen, setIsBasketOpen] = useState(false);
 
   const toggleBasketModal = () => {
-    setIsBasketOpen(prev => !prev)
-  }
+    setIsBasketOpen(prev => !prev);
+  };
   return (
     <PopurSection>
       <PopurContainer>
@@ -46,13 +45,14 @@ const PopularCakes = () => {
               <Button text="Переглянути">
                 <ArrowIcon />
               </Button>
-              {isBasketOpen && (
-              <ModalBasket closeModal={toggleBasketModal} />
-            )}  
-              <Button text="До кошику" variant={"cardOpacity"} onClick={toggleBasketModal}>
+              {isBasketOpen && <ModalBasket closeModal={toggleBasketModal} />}
+              <Button
+                text="До кошику"
+                variant={"cardOpacity"}
+                onClick={toggleBasketModal}
+              >
                 <BasketIcon />
               </Button>
-
             </ButtonsContainer>
           </CardsTextContainer>
         </PopularItem>
@@ -66,8 +66,11 @@ const PopularCakes = () => {
               <Button text="Переглянути">
                 <ArrowIcon />
               </Button>
-              <Button text="До кошику" variant={"cardOpacity"} onClick={toggleBasketModal}>
-                
+              <Button
+                text="До кошику"
+                variant={"cardOpacity"}
+                onClick={toggleBasketModal}
+              >
                 <BasketIcon />
               </Button>
             </ButtonsContainer>
@@ -83,7 +86,11 @@ const PopularCakes = () => {
               <Button text="Переглянути">
                 <ArrowIcon />
               </Button>
-              <Button text="До кошику" variant={"cardOpacity"} onClick={toggleBasketModal}>
+              <Button
+                text="До кошику"
+                variant={"cardOpacity"}
+                onClick={toggleBasketModal}
+              >
                 <BasketIcon />
               </Button>
             </ButtonsContainer>
@@ -99,7 +106,11 @@ const PopularCakes = () => {
               <Button text="Переглянути">
                 <ArrowIcon />
               </Button>
-              <Button text="До кошику" variant={"cardOpacity"} onClick={toggleBasketModal}>
+              <Button
+                text="До кошику"
+                variant={"cardOpacity"}
+                onClick={toggleBasketModal}
+              >
                 <BasketIcon />
               </Button>
             </ButtonsContainer>
