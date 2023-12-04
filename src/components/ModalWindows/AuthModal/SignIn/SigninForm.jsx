@@ -1,4 +1,5 @@
-import { Formik, Field } from 'formik';
+import { Formik, Field, Form } from 'formik';
+import * as Yup from 'yup';
 import { useState } from 'react';
 import{
     LoginHeader,
@@ -8,37 +9,49 @@ import{
     InputField,
     PasswordToggler,
     PasswordTogglerIcon,
-    SigninTextBtn,
-    SigninSubmitBtn
+
 } from './SigninForm.styled';
 import sprite from '@/assets/images/modal/sprite-eye.svg';
+import { useDispatch } from 'react-redux';
+import { login } from '@/redux/Auth/auth-operations';
+import Button from '../../../Button/Button';
 
 const SigninForm = ({ onForgotPasswordClick }) => {
     const [showPassword, setShowPassword] = useState(false);
+    const dispatch = useDispatch();
    
     const initialValues = {
-        emailOrPhone: '',
+        email:'',
         password: ''
     };
 
-    const onSubmit = (values) => {
-        console.log('Submitted values:', values);
-    };
+    const validationSchema = Yup.object().shape({
+        email: Yup.string().email('Введіть дійсний email').required('Поле "Ел. пошта" є обов’язковим'),
+        password: Yup.string().min(6, 'Пароль повинен містити принаймні 6 символів').required('Поле "Пароль" є обов’язковим'),
+      });
+      
+
+    const onSubmit = () => {
+        dispatch(login(values));
+        console.log('Submitted values:');
+
+      };
 
     return (
         <>
         <LoginHeader>Вхід</LoginHeader>
-        <Formik initialValues={initialValues} onSubmit={onSubmit}>
+        <Formik 
+        initialValues={initialValues} 
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}>
                 {(formik) => (
-                    <form onSubmit={formik.handleSubmit}>
-                    
-                            <FormContainer>
+                    <FormContainer onSubmit={formik.handleSubmit}>
                                 <WrapperInputField>
                                 <WrapperInput>
                                     <label htmlFor="emailOrPhone">Ел. пошта або номер телефону</label>
                                     <Field
                                         type="text"
-                                        name="emailOrPhone"
+                                        name="email"
                                         placeholder="Введіть ел. пошту або номер телефону"
                                         as={InputField}
                                     />
@@ -60,14 +73,11 @@ const SigninForm = ({ onForgotPasswordClick }) => {
                                             </PasswordTogglerIcon>
                                         </PasswordToggler>
                                 </WrapperInput>
-                                <SigninTextBtn type='button' $variant={'cardOpacity'} onClick={onForgotPasswordClick}>Забули пароль</SigninTextBtn>
-                                <SigninSubmitBtn type='submit' $variant={"hero"}>Увійти</SigninSubmitBtn>
-
-                                </WrapperInputField>
+                                <Button type='button' variant={'SignInBtn'} text={'Забули пароль'} onClick={onForgotPasswordClick}/>
+                                <Button type='submit' variant={"RegButton"} text={'Увійти'}/>
                                 
-                            </FormContainer>
-                            
-                    </form>
+                                </WrapperInputField>
+         </FormContainer>
                 )}
             </Formik>
             </>

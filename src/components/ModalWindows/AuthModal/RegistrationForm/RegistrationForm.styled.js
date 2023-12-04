@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { flexCenter } from "@/helpers/styles/fragments";
-import { ButtonStyled } from "../../../Button/Button.styled";
+
 
 export const RegistrationHeader = styled.h1`
   font-family: ${({ theme }) => theme.fonts.primary};
@@ -17,18 +17,10 @@ margin-top: ${({ theme }) => theme.spacing(8)};
 
 `
 export const WrapperInput = styled.div`
-display: flex;
+${flexCenter};
+align-items: flex-start;
 flex-direction: column;
-justify-content: center;
 
-
-label {
-  display: inline-block;
-  font-family: ${({ theme }) => theme.fonts.secondary};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  font-size: ${({ theme }) => theme.fontSizes.xxs};
-  color: ${({ theme }) => theme.colors.text};
-  line-height: ${({ theme }) => theme.lineHeights.body};
 
 `
 
@@ -51,6 +43,9 @@ export const InputField = styled.input`
   line-height: ${({ theme }) => theme.lineHeights.body};
   border-radius: ${({ theme }) => theme.radii.button};
   border: ${({ theme }) => theme.borders.normal} ${({ theme }) => theme.colors.input}; 
+  outline: none;
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
   `
 
 export const FormSpan = styled.span`
@@ -62,7 +57,7 @@ export const FormSpan = styled.span`
   text-transform: uppercase; 
   `
 
-export const FormDiv = styled.div`
+export const FormDiv = styled.form`
     ${ flexCenter}
     flex-direction: column;
     position: relative;
@@ -87,13 +82,13 @@ export const GoogleButton = styled.button`
 export const GoogleIcon = styled.img`
     width: ${({ theme }) => theme.spacing(6)}; 
     height: ${({ theme }) => theme.spacing(6)}; 
-    margin-right: 1px;
+    margin-right: ${({ theme }) => theme.spacing(2)};
 
 `;
 export const RegistDivider = styled.div`
 ${ flexCenter }
 flex-direction: column;
-padding: 24px 117px 0 117px;
+margin-top: ${({ theme }) => theme.spacing(6)};
 &::before,
 &::after {
 content: "";
@@ -105,34 +100,12 @@ background-color: ${({ theme }) => theme.colors.input};
 }
 
 &::before {
-left: 117px;
+left: ${({ theme }) => theme.spacing(29)};
 }
 
 &::after {
-right: 117px;
+right:${({ theme }) => theme.spacing(29)};
 }
 `
 
-export const PasswordToggler = styled.button`
-  ${ flexCenter }
-  position: absolute;
-  top: ${({ theme }) => theme.spacing(49)};
-  right: ${({ theme }) => theme.spacing(4)};
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  width: ${({ theme }) => theme.spacing(12)};
-  height: ${({ theme }) => theme.spacing(12)};
-`;
 
-export const PasswordTogglerIcon = styled.svg`
-  fill: inherit;
-  width: ${({ theme }) => theme.spacing(6)};
-  height: ${({ theme }) => theme.spacing(4)};
-`;
-
-export const RegstButton = styled(ButtonStyled)`
-max-width: ${({ theme }) => theme.spacing(130)};
-margin-top: ${({ theme }) => theme.spacing(8)};
-padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(45)}
-`

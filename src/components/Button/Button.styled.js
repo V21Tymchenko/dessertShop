@@ -86,4 +86,55 @@ export const ButtonStyled = styled.button`
       max-width: 180px;
       margin-top: 32px;
     `}
+
+    ${({ $variant }) =>
+    $variant === "authButtonReg" &&
+    css`
+      font-weight: ${({ theme }) => theme.fontWeights.semibold};
+      color: ${({ theme }) => theme.colors.text};
+      max-width: ${({ theme }) => theme.spacing(94)};
+      background-color: ${({ theme }) => theme.colors.body};
+      border: 1px solid ${({ theme }) => theme.colors.buttons};
+      padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(35)};
+      border-radius: 10px 0 0 10px;
+
+      &:focus,
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
+      }
+    `}
+
+    ${({ $variant }) =>
+    $variant === "RegButton" &&
+    css`
+    max-width: ${({ theme }) => theme.spacing(130)};
+    margin-top: ${({ theme }) => theme.spacing(8)};
+    padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(45)}      
+    `}
+
+    ${({ $variant }) =>
+    $variant === "SignInBtn" &&
+    css`
+    margin-top: 0;
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
+    font-size: ${({ theme }) => theme.fontSizes.s};
+    color: ${({ theme }) => theme.colors.text};
+    line-height: ${({ theme }) => theme.lineHeights.body};
+    margin-left: ${({ theme }) => theme.spacing(83)};
+    background-color: inherit;
+    padding: ${({ theme }) => theme.spacing(5)} ${({ theme }) => theme.spacing(6)};
+    border:${({ theme }) => theme.borders.none};
+
+    &:focus{
+      background-color: inherit;
+      border: ${({ theme }) => theme.borders.normal} ${({ theme }) => theme.colors.hoverButtons};
+
+    }
+    &:active {
+      color: ${({ theme }) => theme.colors.active};
+      border: ${({ theme }) => theme.borders.none}
+    }
+    `}
+    
 `;
