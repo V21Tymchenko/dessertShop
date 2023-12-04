@@ -65,7 +65,7 @@ const CustomInput = props => {
           type="button"
           onClick={() => setShowPassword(prev => !prev)}
         >
-          <PasswordTogglerIcon width="20" height="20">
+          <PasswordTogglerIcon>
             <use href={`${sprite}#${showPassword ? 'eye' : 'eye-off'}`}></use>
           </PasswordTogglerIcon>
         </PasswordToggler>

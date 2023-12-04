@@ -115,7 +115,8 @@ export const ButtonStyled = styled.button`
     ${({ $variant }) =>
     $variant === "SignInBtn" &&
     css`
-    margin-top: 0;
+    margin-top: ${({ theme }) => theme.spacing(4)};
+    margin-bottom: ${({ theme }) => theme.spacing(4)};
     font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: ${({ theme }) => theme.fontWeights.bold};
     font-size: ${({ theme }) => theme.fontSizes.s};
@@ -126,6 +127,7 @@ export const ButtonStyled = styled.button`
     padding: ${({ theme }) => theme.spacing(5)} ${({ theme }) => theme.spacing(6)};
     border:${({ theme }) => theme.borders.none};
 
+    &:hover,
     &:focus{
       background-color: inherit;
       border: ${({ theme }) => theme.borders.normal} ${({ theme }) => theme.colors.hoverButtons};

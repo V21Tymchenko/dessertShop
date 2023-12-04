@@ -1,13 +1,10 @@
 import { Formik, Field, Form } from 'formik';
 import {signUpSchema} from '../../../../helpers/schemas/authValidationSchema'
 import CustomInput from '../../../CustomInput/CustomInput';
-import { useState } from 'react';
 import {
     RegistrationHeader,
     FormContainer,
-    WrapperInput,
     WrapperInputField,
-    InputField,
     FormSpan,
     FormDiv,
     GoogleIcon,
@@ -92,25 +89,25 @@ const RegistrationForm = ({ verificationId }) => {
                                 name="name"
                                 id="name"
                                 required
-                                placeholder="Ім’я та Прізвище"
+                                placeholder="Оксана Шевченко"
                             />
                             <CustomInput
                                 name="phone"
                                 id="phone"
                                 required
-                                placeholder="Номер телефону"
+                                placeholder="+38 (099) 876 54 32"
                             />
                             <CustomInput
                                 name="email"
                                 id="email"
                                 required
-                                placeholder="Пошта"
+                                placeholder="oksana_shevchenko@gmail.com"
                             />
                             <CustomInput
                                 name="password"
                                 id="password"
                                 required
-                                placeholder="Пароль"
+                                placeholder="******"
                             />
       
                         </WrapperInputField>
@@ -120,7 +117,7 @@ const RegistrationForm = ({ verificationId }) => {
                             <GoogleIcon src={googleIconUrl} alt="Google Icon" />
                             Зареєструватись через Google
                         </GoogleButton>
-                        <Button type='submit' text={'Зареєструватись'} variant={"RegButton"} disabled={!dirty || !isValid}/>
+                        <Button type='submit' text={'Зареєструватись'} variant={"RegButton"} />
                             </RegistDivider>
                     </FormContainer>
                    </FormDiv>
