@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
+import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
+import AuthModal from "@/components/ModalWindows/AuthModal/AuthModal";
 import logo from "@/assets/images/лого.svg";
 import {
   AuthorizationIcon,
@@ -21,9 +24,7 @@ import {
   TelegramLink,
   UserMenu,
 } from "./MainHeader.styled";
-import AuthModal from "@/components/ModalWindows/AuthModal/AuthModal";
-import { useState } from "react";
-import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
+
 
 const MainHeader = () => {
 

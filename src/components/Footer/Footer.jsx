@@ -7,12 +7,10 @@ import {
   FooterListItem,
   FooterListLink,
   FooterLogo,
+  FooterTitle,
   InstagramIcon,
   MainContainerInfo,
   PhoneIcon,
-  Title2,
-  Title3,
-  Title4,
 } from "./Footer.styled";
 import Container from "../Container";
 
@@ -30,7 +28,7 @@ const Footer = () => {
             </p>
           </MainContainerInfo>
           <div>
-            <Title2>Каталог</Title2>
+            <FooterTitle>Каталог</FooterTitle>
             <ul>
               <FooterListItem>
                 <FooterListLink to="cakes">Торти</FooterListLink>
@@ -53,7 +51,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <Title3>Компанія</Title3>
+            <FooterTitle>Компанія</FooterTitle>
             <ul>
               <FooterListItem>
                 <FooterListLink to="cooperation">Співпраця</FooterListLink>
@@ -74,7 +72,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <Title4>Зв’яжіться з нами</Title4>
+            <FooterTitle>Зв’яжіться з нами</FooterTitle>
             <ul>
               <FooterListItem>
                 <FooterLink

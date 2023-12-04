@@ -1,38 +1,21 @@
-import Button from "../Button/Button";
+import ArmyHelp from "../ArmyHelp/ArmyHelp";
 import cakes from "@/assets/images/homePage/Cakes.webp";
 import cakesRetina from "@/assets/images/homePage/Cakes_2x.webp";
 import {
   BackgroundImg,
   ContentHero,
   ContentMainHero,
-  ContentTextTop,
+  HeroLink,
   ImagesWrapper,
-  StyledLink,
-  StyledPicture,
   TextHero,
   TextHeroSecondary,
   WrapperHero,
 } from "./Hero.styled";
 
-
 const Hero = () => {
   return (
     <WrapperHero>
-      <ContentTextTop>
-        <TextHeroSecondary>
-          10% з продажів йде на допомогу для ЗСУ. Звіти можна побачити у нашому
-          профілі у
-        </TextHeroSecondary>
-        <StyledLink
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Link to Instagram"
-        >
-         Instagram
-        </StyledLink>
-      </ContentTextTop>
-
+      <ArmyHelp />
       <ContentMainHero>
         <ContentHero>
           <TextHero>
@@ -43,17 +26,17 @@ const Hero = () => {
             об'єднуються в чудових десертах, створених з найкращих інгредієнтів
             та любові до кулінарного мистецтва.
           </TextHeroSecondary>
-          <Button text={"Каталог"} variant={"hero"} />
+          <HeroLink to="cakes">Каталог</HeroLink>
         </ContentHero>
         <ImagesWrapper>
-          <StyledPicture>
+          <picture>
             <source
               media="(min-width: 1280px)"
               srcSet={`${cakes} 1x, ${cakesRetina} 2x`}
               type="image/webp"
             />
             <img src={cakes} alt="Images Cakes" loading="lazy" />
-          </StyledPicture>
+          </picture>
           <BackgroundImg />
         </ImagesWrapper>
       </ContentMainHero>
