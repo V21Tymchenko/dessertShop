@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CloseModalIcon from "@/assets/images/modal/close.svg?react";
 import { ButtonStyled } from "../../Button/Button.styled";
+import { flexCenter } from "@/helpers/styles/fragments";
 
 export const AuthBackdrop = styled.div`
     display: flex;
@@ -31,35 +32,48 @@ export const AuthorizationModal = styled.div`
 export const CloseModalBtn = styled.button`
     background-color: transparent;
     border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${flexCenter}
     position: absolute;
-    top: 24px;
-    right: 32px;
+    top: ${({ theme }) => theme.spacing(6)};
+    right: ${({ theme }) => theme.spacing(8)};
     cursor: pointer;
     pointer-events: auto;
+    height: ${({ theme }) => theme.spacing(12)};
+    width: ${({ theme }) => theme.spacing(12)};
 `
 
 export const CloseModal = styled(CloseModalIcon)`
     background-color: transparent;
     margin: 0 auto;
     fill: ${({ theme }) => theme.colors.text};
-    height: ${({ theme }) => theme.spacing(6)};
-    width: ${({ theme }) => theme.spacing(6)};
+    height: ${({ theme }) => theme.spacing(10)};
+    width: ${({ theme }) => theme.spacing(10)};
     pointer-events: auto;
   
 
 `
 export const ButtonWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ ${ flexCenter }
 `
-export const AuthButton = styled(ButtonStyled)`
+export const AuthButtonReg = styled(ButtonStyled)`
 max-width: none;
 color: ${({ theme }) => theme.colors.text};
 background-color: ${({ theme }) => theme.colors.body};
+border-radius: 10px 0 0 10px;
+padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(35)};
+
+
+&.active {
+  color: ${({ theme }) => theme.colors.body};
+  background-color: ${({ theme }) => theme.colors.hoverButtons};
+}
+`;
+export const AuthButtonLog = styled(ButtonStyled)`
+max-width: none;
+color: ${({ theme }) => theme.colors.text};
+background-color: ${({ theme }) => theme.colors.body};
+border-radius: 0 10px 10px 0;
+padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(42)};
 
 
 &.active {
@@ -68,9 +82,4 @@ background-color: ${({ theme }) => theme.colors.body};
 }
 `;
 
-export const AuthWrapper = styled.div`
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // margin-top: 32px;
-`
+

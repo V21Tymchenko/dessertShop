@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ButtonStyled } from "../../../Button/Button.styled";
 import { flexCenter } from "@/helpers/styles/fragments";
 
 export const LoginHeader = styled.h1`
@@ -12,30 +11,23 @@ text-align: center;
 margin-top: ${({ theme }) => theme.spacing(15)};
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
 ${ flexCenter }
-margin: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(0)} ${({ theme }) => theme.spacing(4)} ; 
+margin-top: ${({ theme }) => theme.spacing(8)} ; 
 
 `
 export const WrapperInputField = styled.div`
 ${ flexCenter }
 flex-wrap: wrap;
 width: ${({ theme }) => theme.spacing(130)};
+
+}
 `
 export const WrapperInput = styled.div`
 ${ flexCenter }
 align-items: flex-start;
 flex-direction: column;
 margin-bottom: ${({ theme }) => theme.spacing(8)};
-
-
-label {
-  display: inline-block;
-  font-family: ${({ theme }) => theme.fonts.secondary};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  font-size: ${({ theme }) => theme.fontSizes.xxs};
-  color: ${({ theme }) => theme.colors.text};
-  line-height: ${({ theme }) => theme.lineHeights.body};
 
 `
 
@@ -50,18 +42,31 @@ export const InputField = styled.input`
   line-height: ${({ theme }) => theme.lineHeights.body};
   border-radius: ${({ theme }) => theme.radii.button};
   border: ${({ theme }) => theme.borders.normal} ${({ theme }) => theme.colors.input}; 
+    
+  outline: none;
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
+
   `
 
   export const PasswordToggler = styled.button`
 ${ flexCenter }
   position: absolute;
-  top: ${({ theme }) => theme.spacing(108)};
+  top: 439px;
   right: ${({ theme }) => theme.spacing(38)};
   transform: translateY(-50%);
   background-color: transparent;
   border: ${({ theme }) => theme.borders.none};
   width: ${({ theme }) => theme.spacing(12)};
   height: ${({ theme }) => theme.spacing(12)};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
+    border-radius: ${({ theme }) => theme.spacing(3)};
+  }
+  // &:focus{
+  //   border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
+  //   border-radius: ${({ theme }) => theme.spacing(3)}
+  }
 `;
 
 export const PasswordTogglerIcon = styled.svg`
@@ -69,34 +74,4 @@ export const PasswordTogglerIcon = styled.svg`
   width: ${({ theme }) => theme.spacing(6)};
   height: ${({ theme }) => theme.spacing(4)};
 `;
-
-
-export const SigninTextBtn = styled(ButtonStyled)`
-margin-top: 0;
-font-family: ${({ theme }) => theme.fonts.secondary};
-font-weight: ${({ theme }) => theme.fontWeights.bold};
-font-size: ${({ theme }) => theme.fontSizes.s};
-color: ${({ theme }) => theme.colors.text};
-line-height: ${({ theme }) => theme.lineHeights.body};
-margin-left: ${({ theme }) => theme.spacing(83)};
-background-color: inherit;
-padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(6)};
-border:${({ theme }) => theme.borders.none};
-
-&:focus{
-  background-color: inherit;
-  border: ${({ theme }) => theme.borders.normal} ${({ theme }) => theme.colors.hoverButtons};
-
-}
-&:active {
-  color: ${({ theme }) => theme.colors.active};
-  border: ${({ theme }) => theme.borders.none}
-}
-`
-
-export const SigninSubmitBtn = styled(ButtonStyled)`
-max-width: ${({ theme }) => theme.spacing(130)};
-margin-top: ${({ theme }) => theme.spacing(12)};
-`
-
 

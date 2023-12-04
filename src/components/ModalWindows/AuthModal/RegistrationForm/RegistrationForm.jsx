@@ -1,4 +1,6 @@
-import { Formik, Field } from 'formik';
+import { Formik, Field, Form } from 'formik';
+import {signUpSchema} from '../../../../helpers/schemas/authValidationSchema'
+import CustomInput from '../../../CustomInput/CustomInput';
 import { useState } from 'react';
 import {
     RegistrationHeader,
@@ -11,96 +13,117 @@ import {
     GoogleIcon,
     GoogleButton,
     RegistDivider,
-    PasswordToggler,
-    PasswordTogglerIcon,
-    RegstButton
+
 } from './RegistrationForm.styled';
 import googleIconUrl from '@/assets/images/modal/google.svg';
-import sprite from '@/assets/images/modal/sprite-eye.svg';
+
+import { register } from '../../../../redux/Auth/auth-operations';
+import { useDispatch } from 'react-redux';
+import Button from '../../../Button/Button';
+import useAuth from '../../../../hooks/useAuth'
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
+const RegistrationForm = ({ verificationId }) => {
 
-const RegistrationForm = () => {
-    const [showPassword, setShowPassword] = useState(false);
-   
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const initialValues = {
-        name: '',
-        tel: '',
+        name:'',
+        phone: '',
         email: '',
-        password: ''
-    };
+        password: '',
+      };
 
-    const onSubmit = (values) => {
-        console.log('Submitted values:', values);
-    };
+
+      const { isVerify, user } = useAuth();
+
+      const handleSubmit = (credentials) => {
+        dispatch(register(credentials));
+        console.log('Submitted values:', credentials);
+
+      };
+
+      
+      const handleVerify = (link) => {
+        dispatch(verifyUserByLink(link))
+          .then((response) => {
+            console.log('Verification successful:', response);
+          })
+          .catch((error) => {
+            console.error('Verification error:', error);
+          });
+      };
+
+      useEffect(() => {
+
+    
+        if (verificationId && isVerify) {
+            const verificationLink = `https://dessert-shop-plum.vercel.app/verify/${verificationId}`;
+            handleVerify(verificationLink)
+                .then(() => {
+                    console.log('Verification successful');
+                    navigate('/dessertShop');
+                })
+                .catch((error) => {
+                    console.error('Verification error:', error);
+                });
+        }
+    }, [verificationId, isVerify, navigate]);
+    
+    
+      
+
     return (
         <>
             <RegistrationHeader>Реєстрація</RegistrationHeader>
-            <Formik initialValues={initialValues} onSubmit={onSubmit}>
-                {(formik) => (
-                    <form onSubmit={formik.handleSubmit}>
-                        <FormDiv>
-                            <FormContainer>
-                                <WrapperInputField>
-                                    <WrapperInput>
-                                        <label htmlFor="name">Ім’я та Прізвище</label>
-                                        <Field
-                                            type="text"
-                                            name="name"
-                                            placeholder="Ім’я та Прізвище"
-                                            as={InputField}
-                                        />
-                                    </WrapperInput>
-                                    <WrapperInput>
-                                        <label htmlFor="tel">Номер телефону</label>
-                                        <Field
-                                            type="tel"
-                                            name="tel"
-                                            placeholder="+38 (099) 876 54 32"
-                                            as={InputField}
-                                        />
-                                    </WrapperInput>
-                                    <WrapperInput>
-                                        <label htmlFor="email">Пошта</label>
-                                        <Field
-                                            type="text"
-                                            name="email"
-                                            placeholder="Email"
-                                            as={InputField}
-                                        />
-                                    </WrapperInput>
-                                    <WrapperInput>
-                                        <label htmlFor="password">Пароль</label>
-                                        <Field
-                                            type={showPassword ? 'text' : 'password'}
-                                            name="password"
-                                            placeholder="*******"
-                                            as={InputField}
-                                        />
-                                        <PasswordToggler
-                                            type="button"
-                                            onClick={() => setShowPassword(prev => !prev)}
-                                        >
-                                            <PasswordTogglerIcon width="20" height="20">
-                                                <use href={`${sprite}#${showPassword ? 'eye' : 'eye-off'}`}></use>
-                                            </PasswordTogglerIcon>
-                                        </PasswordToggler>
-                                    </WrapperInput>
-                                </WrapperInputField>
-                                <RegistDivider>
-                                <FormSpan>Або</FormSpan>
-                            <GoogleButton type='button'>
-                                <GoogleIcon src={googleIconUrl} alt="Google Icon" />
-                                Зареєструватись через Google
-                            </GoogleButton>
-                            <RegstButton type='submit' $text={'Зареєструватись'} $variant={"hero"} >Зареєструватись</RegstButton> 
-                                </RegistDivider>
-
-                            </FormContainer>
-
-
-                        </FormDiv>
-                    </form>
+            <Formik 
+            initialValues={initialValues} 
+            onSubmit={handleSubmit}
+            validationSchema={signUpSchema}>
+                {({ isValid, dirty, values }) => (
+                   <FormDiv onSubmit={handleSubmit}>
+                    <FormContainer>
+                        <WrapperInputField>
+                     
+                        <CustomInput
+                                name="name"
+                                id="name"
+                                required
+                                placeholder="Ім’я та Прізвище"
+                            />
+                            <CustomInput
+                                name="phone"
+                                id="phone"
+                                required
+                                placeholder="Номер телефону"
+                            />
+                            <CustomInput
+                                name="email"
+                                id="email"
+                                required
+                                placeholder="Пошта"
+                            />
+                            <CustomInput
+                                name="password"
+                                id="password"
+                                required
+                                placeholder="Пароль"
+                            />
+      
+                        </WrapperInputField>
+                        <RegistDivider>
+                            <FormSpan>Або</FormSpan>
+                        <GoogleButton type='button'>
+                            <GoogleIcon src={googleIconUrl} alt="Google Icon" />
+                            Зареєструватись через Google
+                        </GoogleButton>
+                        <Button type='submit' text={'Зареєструватись'} variant={"RegButton"} disabled={!dirty || !isValid}/>
+                            </RegistDivider>
+                    </FormContainer>
+                   </FormDiv>
                 )}
             </Formik>
         </>
