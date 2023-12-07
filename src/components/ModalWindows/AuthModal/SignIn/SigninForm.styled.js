@@ -21,13 +21,14 @@ ${ flexCenter }
 flex-wrap: wrap;
 width: ${({ theme }) => theme.spacing(130)};
 
+
 }
 `
 export const WrapperInput = styled.div`
 ${ flexCenter }
 align-items: flex-start;
 flex-direction: column;
-margin-bottom: ${({ theme }) => theme.spacing(8)};
+gap: ${({ theme }) => theme.spacing(8)};
 
 `
 
@@ -42,6 +43,7 @@ export const InputField = styled.input`
   line-height: ${({ theme }) => theme.lineHeights.body};
   border-radius: ${({ theme }) => theme.radii.button};
   border: ${({ theme }) => theme.borders.normal} ${({ theme }) => theme.colors.input}; 
+
     
   outline: none;
   &:focus {

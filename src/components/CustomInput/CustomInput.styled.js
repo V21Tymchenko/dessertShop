@@ -39,13 +39,17 @@ export const PasswordToggler = styled.button`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 45%;
-  right: ${({ theme }) => theme.spacing(4)};
+  top: 67%;
+  right: ${({ theme }) => theme.spacing(1)};
   transform: translateY(-50%);
   background-color: transparent;
-  border: none;
-  width: ${({ theme }) => theme.spacing(10)};
-  height: ${({ theme }) => theme.spacing(10)};
+
+  border: ${({ theme }) => theme.borders.none};
+  width: ${({ theme }) => theme.spacing(12)};
+  height: ${({ theme }) => theme.spacing(12)};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
+    border-radius: ${({ theme }) => theme.spacing(3)};
 `;
 
 export const PasswordTogglerIcon = styled.svg`
