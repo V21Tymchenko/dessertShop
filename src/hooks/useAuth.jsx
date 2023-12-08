@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import {
   selectUser,
   selectIsVerify,
-} from "../redux/Auth/auth-selectors";
+} from "../redux/auth/auth-selectors";
 
 const useAuth = () => {
   const user = useSelector(selectUser);

@@ -4,7 +4,7 @@ import { Formik, Field } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 import { selectEmail, selectIsVerified } from "@/redux/auth/auth-selectors";
-import { login } from "@/redux/Auth/auth-operations";
+import { login } from "@/redux/auth/auth-operations";
 import Button from "../../../Button/Button";
 import sprite from "@/assets/images/modal/sprite-eye.svg";
 import {
