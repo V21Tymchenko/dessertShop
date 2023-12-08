@@ -16,8 +16,7 @@ const initialState = {
   error: null,
   refreshToken: null,
 };
-
-export const authSlice = createSlice({
+const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
