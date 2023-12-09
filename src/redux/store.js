@@ -1,4 +1,4 @@
-import { authReducer } from "./auth/auth-slice";
+import authReducer from "./auth/auth-slice";
 import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,

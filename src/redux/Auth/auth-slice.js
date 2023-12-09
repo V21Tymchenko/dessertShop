@@ -16,6 +16,7 @@ const initialState = {
   error: null,
   refreshToken: null,
 };
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -89,4 +90,5 @@ const authSlice = createSlice({
   },
 });
 
-export const authReducer = authSlice.reducer;
+const authReducer = authSlice.reducer;
+export default authReducer;
