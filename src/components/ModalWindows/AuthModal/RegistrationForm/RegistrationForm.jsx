@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
-import { register } from "@/redux/auth/auth-operations";
+import { register } from "@/redux/Auth/auth-operations";
 import { signUpSchema } from "@/helpers/schemas/authValidationSchema";
 import CustomInput from "@/components/CustomInput";
 import Button from "../../../Button/Button";

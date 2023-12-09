@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { selectIsVerified } from "@/redux/auth/auth-selectors";
+import { selectIsVerified } from "@/redux/Auth/auth-selectors";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import SigninForm from "./SignIn/SigninForm";
 import PropTypes from "prop-types";

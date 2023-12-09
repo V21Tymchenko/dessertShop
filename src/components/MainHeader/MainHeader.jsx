@@ -5,12 +5,12 @@ import Navigation from "../Navigation/Navigation";
 import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 import AuthModal from "@/components/ModalWindows/AuthModal/AuthModal";
 import logo from "@/assets/images/лого.svg";
-import { logout } from "@/redux/auth/auth-operations";
+import { logout } from "@/redux/Auth/auth-operations";
 import {
   selectToken,
   selectName,
   selectIsVerified,
-} from "@/redux/auth/auth-selectors";
+} from "@/redux/Auth/auth-selectors";
 import {
   AuthorizationIcon,
   BasketIcon,

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { verifyUser } from "@/redux/auth/auth-operations";
+import { verifyUser } from "@/redux/Auth/auth-operations";
 
 const ConfirmationPage = () => {
   const dispatch = useDispatch();
