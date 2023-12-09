@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {  Field, Form } from "formik";
 import { flexCenter } from "@/helpers/styles/fragments";
 
 
@@ -32,10 +33,10 @@ grid-column-gap: ${({ theme }) => theme.spacing(6)};
 width: ${({ theme }) => theme.spacing(189)};
 `
 
-export const InputField = styled.input`
+export const InputField = styled(Field)`
   width: ${({ theme }) => theme.spacing(91)};
   margin-top: ${({ theme }) => theme.spacing(2)};
-  padding: 13px 4px 13px 16px;;
+  padding: 13px 4px 13px 16px;
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   font-size: ${({ theme }) => theme.fontSizes.xs};
@@ -46,6 +47,7 @@ export const InputField = styled.input`
   outline: none;
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
+  }
   `
 
 export const FormSpan = styled.span`
@@ -57,7 +59,7 @@ export const FormSpan = styled.span`
   text-transform: uppercase; 
   `
 
-export const FormDiv = styled.form`
+export const FormDiv = styled(Form)`
     ${ flexCenter}
     flex-direction: column;
     position: relative;

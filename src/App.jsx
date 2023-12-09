@@ -3,6 +3,7 @@ import SharedLayout from "@/components/SharedLayout";
 import HomePage from "./pages/HomePage";
 import OrderPage from "./pages/OrderPage";
 import CakesPage from "./pages/CakesPage";
+import ConfirmationPage from "./pages/ConfirmPage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="contacts" element={<div>CONTACTS</div>} />
         </Route>
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/verify/:code" element={<ConfirmationPage />} />
       </Routes>
     </>
   );

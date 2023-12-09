@@ -113,3 +113,30 @@ export const ButtonLanguage = styled.button`
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
   }
 `;
+export const UserName = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+`;
+export const UserNameButton = styled.button`
+  display: flex;
+  gap: 8px;
+  padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(4)};
+`;
+export const UserNameContainer = styled.div`
+  position: relative;
+`;
+export const UserMenuContainer = styled.div`
+  display: ${({ open }) => (open ? "block" : "none")};
+  width: 100px;
+  position: absolute;
+`;
+export const UserMenuButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  color: red;
+  border: 1px solid red;
+  border-radius: 6px;
+`;

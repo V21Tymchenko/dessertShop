@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 import AuthModal from "@/components/ModalWindows/AuthModal/AuthModal";
 import logo from "@/assets/images/лого.svg";
+import { logout } from "@/redux/Auth/auth-operations";
+import {
+  selectToken,
+  selectName,
+  selectIsVerified,
+} from "@/redux/Auth/auth-selectors";
 import {
   AuthorizationIcon,
   BasketIcon,
@@ -23,22 +30,47 @@ import {
   SearchIcon,
   TelegramLink,
   UserMenu,
+  UserMenuButton,
+  UserMenuContainer,
+  UserName,
+  UserNameButton,
+  UserNameContainer,
 } from "./MainHeader.styled";
 
-
 const MainHeader = () => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const token = useSelector(selectToken);
+  const name = useSelector(selectName).split(" ")[0];
+  const isVerification = useSelector(selectIsVerified);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isVerification) {
+      setIsModalOpen(true);
+    }
+  }, [isVerification]);
 
   const toggleModal = () => {
     setIsModalOpen(prev => !prev);
   };
 
   const toggleBasketModal = () => {
-    setIsBasketOpen(prev => !prev)
-  }
+    setIsBasketOpen(prev => !prev);
+  };
 
+  const handleUserMenuOpen = () => {
+    setOpenMenu(prev => !prev);
+  };
+  const handleLogOut = () => {
+    try {
+      dispatch(logout());
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <Header>
       <HeaderContainer>
@@ -57,22 +89,34 @@ const MainHeader = () => {
               <FavoriteIcon />
             </HeaderIconLink>
             <HeaderIconButton type="button" onClick={toggleBasketModal}>
-            {" "}
-            <BasketIcon />
-          </HeaderIconButton>         
-           {isBasketOpen && (
-              <ModalBasket closeModal={toggleBasketModal} />
-            )}   
+              {" "}
+              <BasketIcon />
+            </HeaderIconButton>
+            {isBasketOpen && <ModalBasket closeModal={toggleBasketModal} />}
 
-          <HeaderIconButton type="button" onClick={toggleModal}>
-            {" "}
-                 
-            <AuthorizationIcon />
-          </HeaderIconButton>
-          {isModalOpen && (
-              <AuthModal closeModal={toggleModal} />
-            )}   
-        </UserMenu>
+            {token ? (
+              <UserNameContainer>
+                <UserNameButton type="button" onClick={handleUserMenuOpen}>
+                  {" "}
+                  <AuthorizationIcon />
+                  <UserName>{name}</UserName>
+                </UserNameButton>
+                <UserMenuContainer open={openMenu}>
+                  <UserMenuButton type="button" onClick={handleLogOut}>
+                    Вийти
+                  </UserMenuButton>
+                </UserMenuContainer>
+              </UserNameContainer>
+            ) : (
+              <HeaderIconButton type="button" onClick={toggleModal}>
+                {" "}
+                <AuthorizationIcon />
+              </HeaderIconButton>
+            )}
+            {isModalOpen && (
+              <AuthModal closeModal={toggleModal} closeLogin={setIsModalOpen} />
+            )}
+          </UserMenu>
           <ContainerContacts>
             <HeaderIconLink
               href="https://www.instagram.com"
