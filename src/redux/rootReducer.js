@@ -6,7 +6,7 @@ import authReducer from "./Auth/auth-slice";
 const persistRegistrConfig = {
   key: "auth",
   storage,
-  blacklist: ["status"],
+  whitelist: ["token"],
 };
 const persistedRegistrReducer = persistReducer(
   persistRegistrConfig,
