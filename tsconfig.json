@@ -15,10 +15,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "typeRoots": ["./node_modules/@types", "./types"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "@types"]
+  "include": ["src/**/*", "@types", "**/*.ts", "types", "./types/index.d.ts"],
+  "exclude": ["node_modules", ".git"]
 }
