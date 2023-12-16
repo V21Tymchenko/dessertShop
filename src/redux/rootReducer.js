@@ -16,3 +16,4 @@ const persistedRegistrReducer = persistReducer(
 export const rootReducer = combineReducers({
   auth: persistedRegistrReducer,
 });
+

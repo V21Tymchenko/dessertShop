@@ -5,7 +5,6 @@ import { signUpSchema } from "@/helpers/schemas/authValidationSchema";
 import CustomInput from "@/components/CustomInput";
 import Button from "../../../Button/Button";
 import googleIconUrl from "@/assets/images/modal/google.svg";
-import PropTypes from "prop-types";
 import {
   RegistrationHeader,
   FormContainer,
@@ -17,6 +16,7 @@ import {
   RegistDivider,
 } from "./RegistrationForm.styled";
 
+
 const RegistrationForm = ({ shouldCloseModal }) => {
   const dispatch = useDispatch();
 
@@ -26,11 +26,15 @@ const RegistrationForm = ({ shouldCloseModal }) => {
     email: "",
     password: "",
   };
-  const registerOnSubmit = async values => {
-    dispatch(register(values));
-    shouldCloseModal(false);
+  const registerOnSubmit = async values  => {
+    try {
+      dispatch(register(values));
+      shouldCloseModal(false);
+    } catch (error) {
+      console.error("Registration error:", error);
+    }
   };
-  const handleSubmit = credentials => {
+  const handleSubmit = credentials  => {
     try {
       registerOnSubmit(credentials);
     } catch (error) {
@@ -96,7 +100,3 @@ const RegistrationForm = ({ shouldCloseModal }) => {
   );
 };
 export default RegistrationForm;
-
-RegistrationForm.propTypes = {
-  shouldCloseModal: PropTypes.func,
-};
