@@ -5,11 +5,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 axios.defaults.baseURL = "https://online-store-frwk.onrender.com";
 
 const tokenControl = {
-  set(token) {
+  set(token: string): void {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
 
-  unset() {
+  unset(): void {
     axios.defaults.headers.common.Authorization = "";
   },
 };
@@ -26,9 +26,13 @@ export const register = createAsyncThunk(
       );
       return data;
     } catch (err) {
-      Notify.failure(err.message);
-
-      return thunkAPI.rejectWithValue(err.message);
+      const hasErrResponse = (err as { message: { [key: string]: string } })
+        .message;
+      if (!hasErrResponse) {
+        throw err;
+      }
+      Notify.failure(`${hasErrResponse}`);
+      return thunkAPI.rejectWithValue(hasErrResponse);
     }
   }
 );
@@ -38,11 +42,11 @@ export const verifyUser = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post("/auth/email/confirm", credentials);
-       Notify.success("We confirm your email successfully!");
+      Notify.success("We confirm your email successfully!");
       tokenControl.set(data.token);
       return data;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+      return thunkAPI.rejectWithValue(err);
     }
   }
 );
@@ -56,21 +60,34 @@ export const login = createAsyncThunk(
       tokenControl.set(data.token);
 
       Notify.success("Login is successful");
+      console.log(data);
       return data;
     } catch (err) {
-      Notify.failure(`Login error: ${err.message}`);
-      return thunkAPI.rejectWithValue(err.message);
+      const hasErrResponse = (err as { message: { [key: string]: string } })
+        .message;
+      if (!hasErrResponse) {
+        throw err;
+      }
+      Notify.failure(`Login error: ${hasErrResponse}`);
+      return thunkAPI.rejectWithValue(hasErrResponse);
     }
   }
 );
 
-export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
-  try {
-    const { data } = await axios.post("/auth/logout");
+export const logout = createAsyncThunk<void, undefined>(
+  "auth/logout",
+  async (_, thunkAPI) => {
+    try {
+      await axios.post("/auth/logout");
 
-    tokenControl.unset(data.token);
-    return data;
-  } catch (err) {
-    return thunkAPI.rejectWithValue(err.message);
+      tokenControl.unset();
+    } catch (err) {
+      const hasErrMessage = (err as { message: { [key: string]: string } })
+        .message;
+      if (!hasErrMessage) {
+        throw err;
+      }
+      return thunkAPI.rejectWithValue(hasErrMessage);
+    }
   }
-});
+);

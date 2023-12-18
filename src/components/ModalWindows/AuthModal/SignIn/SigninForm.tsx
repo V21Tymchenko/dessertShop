@@ -58,7 +58,7 @@ const SigninForm: FC<SignFormProps> = ({
     await dispatch(login(values));
     shouldCloseModal(false);
   };
-  const onSubmit = ( values: initialValuesProps) => {
+  const onSubmit = (values: initialValuesProps) => {
     try {
       loginOnSubmit(values);
     } catch (error) {
