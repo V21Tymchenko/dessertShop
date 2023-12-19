@@ -15,13 +15,26 @@ import {
   PasswordToggler,
   PasswordTogglerIcon,
 } from "./SigninForm.styled";
+import { AppDispatch } from "@/redux/store";
+import { initialValuesSigninForm } from "@/components/App.types";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Введіть дійсний email")
+    .required('Поле "Ел. пошта" є обов’язковим'),
+  password: Yup.string()
+    .min(6, "Пароль повинен містити принаймні 6 символів")
+    .required('Поле "Пароль" є обов’язковим'),
+});
+
+const initialValues: initialValuesSigninForm = {
+  email: "",
+  password: "",
+};
 
 interface SignFormProps {
   onForgotPasswordClick: () => void;
   shouldCloseModal: (value: boolean) => void;
-}
-interface initialValuesProps {
-  [key: string]: string;
 }
 
 const SigninForm: FC<SignFormProps> = ({
@@ -32,7 +45,7 @@ const SigninForm: FC<SignFormProps> = ({
 
   const email = useSelector(selectEmail);
   const verified = useSelector(selectIsVerified);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     if (verified) {
@@ -40,31 +53,10 @@ const SigninForm: FC<SignFormProps> = ({
     }
   }, [verified, shouldCloseModal]);
 
-  const initialValues: initialValuesProps = {
-    email: email || "",
-    password: "",
-  };
-
-  const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Введіть дійсний email")
-      .required('Поле "Ел. пошта" є обов’язковим'),
-    password: Yup.string()
-      .min(6, "Пароль повинен містити принаймні 6 символів")
-      .required('Поле "Пароль" є обов’язковим'),
-  });
-
-  const loginOnSubmit = async (values: initialValuesProps) => {
-    await dispatch(login(values));
+  const onSubmit = (values: initialValuesSigninForm) => {
+    console.log(values);
+    dispatch(login(values));
     shouldCloseModal(false);
-  };
-  const onSubmit = (values: initialValuesProps) => {
-    try {
-      loginOnSubmit(values);
-    } catch (error) {
-      console.error("Login error:", error);
-    }
-    loginOnSubmit(values);
   };
 
   return (
