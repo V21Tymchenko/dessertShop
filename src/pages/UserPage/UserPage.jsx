@@ -28,15 +28,15 @@ const UserPage = () => {
         <UserPageNavLinkBox>
           <UserPageNavLink to="/user/personalData">
             <BiUser color={theme.colors.text} size="24px" />
-            Personal Data
+            Особисті дані
           </UserPageNavLink>
           <UserPageNavLink to="/user/myOrders">
             <RiFileList2Line color={theme.colors.text} size="24px" />
-            My orders
+            Мої замовлення
           </UserPageNavLink>
           <UserPageNavLink to="/user/wishList">
             <FaRegHeart color={theme.colors.text} size="24px" />
-            Wish list
+            Список бажань
           </UserPageNavLink>
         </UserPageNavLinkBox>
         <Outlet />

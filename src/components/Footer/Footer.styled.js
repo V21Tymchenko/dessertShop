@@ -19,10 +19,10 @@ export const ContainerFooter = styled.footer`
     background-color: #f7d1de;
   }
   &::before {
-    top: 1564px;
+    /* top: 1564px; */
   }
   &::after {
-    top: 1697px;
+    /* top: 1697px; */
   }
 `;
 export const FooterLogo = styled.img`
