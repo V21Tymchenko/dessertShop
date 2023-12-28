@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import Button from "@/components/Button/Button";
 import ModalBasket from "../../ModalWindows/ModalBasket/ModalBasket";
 
-
 import img from "@/assets/delete/фото.jpg";
 import {
   ArrowIcon,
@@ -15,7 +14,7 @@ import {
   PopularList,
   PopularText,
   PopularTitle,
-} from "../MyOrders/MyOdrders.styled";
+} from "../WishList/WishList.styled";
 
 const WishList: FC = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);

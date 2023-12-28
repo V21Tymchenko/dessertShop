@@ -1,78 +1,83 @@
 import styled from "styled-components";
-import RightArrow from "@/assets/images/popularCakes/right-arrow-alt.svg?react";
-import Basket from "@/assets/images/popularCakes/basket.svg?react";
-import { FaHeart } from "react-icons/fa";
 
-export const PopularList = styled.ul`
+export const HeaderTable = styled.div`
   display: flex;
-  margin-top: 41px;
-  gap: ${({ theme }) => theme.spacing(10)};
+  color: ${({ theme }) => theme.colors.inputText};
 `;
 
-export const PopularItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  border-radius: ${({ theme }) => theme.spacing(2)};
-  width: 288px;
-  box-shadow: ${({ theme }) => theme.shadows.primary};
-
-  position: relative;
-`;
-
-export const FavoriteBtn = styled.button`
-  position: absolute;
-  background-color: ${({ theme }) => theme.colors.body};
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  top: 16px;
-  right: 16px;
-
-  cursor: pointer;
-`;
-
-export const FavoriteIcon = styled(FaHeart)`
-  background-color: ${({ theme }) => theme.colors.body};
-  width: 24px;
-  height: 24px;
-  color: ${({ theme }) => theme.colors.active};
-  /* background-color: ${({ theme }) => theme.colors.active}; */
-`;
-
-export const CardsTextContainer = styled.div`
-  padding: ${({ theme }) => theme.spacing(6)} ${({ theme }) => theme.spacing(4)};
-`;
-
-export const PopularTitle = styled.h3`
+export const NumRow = styled.p`
+  font-family: ${({ theme }) => theme.colors.secondary};
   font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  color: inherit;
+
+  width: 70px;
+  padding: 13px 8px;
 `;
 
-export const PopularText = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.m};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  margin-top: ${({ theme }) => theme.spacing(2)};
+export const NameRow = styled.p`
+  font-family: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  color: inherit;
+
+  width: 180px;
+  padding: 13px 8px;
 `;
 
-export const ButtonsContainer = styled.div`
+export const QuantityRow = styled.p`
+  font-family: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  color: inherit;
+
+  width: 86px;
+  padding: 13px 8px;
+`;
+
+export const SumRow = styled.p`
+  font-family: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  color: inherit;
+
+  width: 140px;
+  padding: 13px 8px;
+`;
+
+export const PMethodRow = styled.p`
+  font-family: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  color: inherit;
+
+  width: 143px;
+  padding: 13px 8px;
+`;
+
+export const DeliveryRow = styled.p`
+  font-family: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  color: inherit;
+
+  width: 180px;
+  padding: 13px 8px;
+`;
+
+export const StatusFilter = styled.select`
+  font-family: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  color: inherit;
+
+  width: 150px;
+  padding: 13px 8px;
+`;
+
+export const OrderItem = styled.li`
+  color: ${({ theme }) => theme.colors.text};
+
   display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
-  margin-top: ${({ theme }) => theme.spacing(6)};
-`;
-
-export const ArrowIcon = styled(RightArrow)`
-  width: ${({ theme }) => theme.spacing(6)};
-  height: ${({ theme }) => theme.spacing(6)};
-  margin-left: ${({ theme }) => theme.spacing(2)};
-`;
-
-export const BasketIcon = styled(Basket)`
-  width: ${({ theme }) => theme.spacing(6)};
-  height: ${({ theme }) => theme.spacing(6)};
-  margin-left: ${({ theme }) => theme.spacing(2)};
+  align-items: center;
 `;
