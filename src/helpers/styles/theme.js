@@ -13,6 +13,7 @@ const theme = {
     borderCards: "#ffeb98",
     accentBlue: " #cddafa",
     borderInput: "#9a9a9a",
+    iconColorAccent: "#B83D6E",
   },
   spacing: value => `${4 * value}px`,
   fonts: {

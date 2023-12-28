@@ -4,6 +4,9 @@ import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 import Button from "@/components/Button/Button";
 import img from "@/assets/delete/фото.jpg";
 
+
+
+
 import {
   ArrowIcon,
   BasketIcon,
