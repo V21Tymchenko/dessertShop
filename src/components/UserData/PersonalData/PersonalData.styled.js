@@ -9,8 +9,9 @@ export const PerdonalDataButton = styled.button`
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
-  color: ${({ theme }) => theme.colors.body};
-  background-color: ${({ theme }) => theme.colors.active};
+  color: ${({ theme }) => theme.colors.text};
+  background-color: inherit;
+
   padding: 12px 16px;
   cursor: pointer;
 
@@ -24,8 +25,8 @@ export const PerdonalDataButton = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.borderInput};
 
   &.active {
-    background-color: inherit;
-    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.active};
+    color: ${({ theme }) => theme.colors.body};
   }
 `;
 
@@ -53,24 +54,24 @@ export const PerdonalDataTitle = styled.p`
 `;
 
 export const PerdonalDataPopUpBox = styled.div`
-  border-left: 1px solid ${({ theme }) => theme.colors.iconColorAccent};
-  border-right: 1px solid ${({ theme }) => theme.colors.iconColorAccent};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.iconColorAccent};
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  width: 944px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: -34px;
-  padding-left: 48px;
-  padding-top: 34px;
+  display: none;
 
   &.active {
-    display: none;
+    border-left: 1px solid ${({ theme }) => theme.colors.iconColorAccent};
+    border-right: 1px solid ${({ theme }) => theme.colors.iconColorAccent};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.iconColorAccent};
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    width: 944px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: -34px;
+    padding-left: 48px;
+    padding-top: 34px;
   }
 `;
 
@@ -163,40 +164,40 @@ export const PerdonalDataFiEyeOff = styled(FiEyeOff)`
 export const PerdonalDataBiLock = styled(BiLock)`
   width: 24px;
   height: 24px;
-  color: ${({ theme }) => theme.colors.body};
+  color: ${({ theme }) => theme.colors.text};
 
-  &.active{
-    color: ${({ theme }) => theme.colors.text};
+  &.active {
+    color: ${({ theme }) => theme.colors.body};
   }
 `;
 
 export const PerdonalDataBiUser = styled(BiUser)`
   width: 24px;
   height: 24px;
-  color: ${({ theme }) => theme.colors.body};
+  color: ${({ theme }) => theme.colors.text};
 
-  &.active{
-    color: ${({ theme }) => theme.colors.text};
+  &.active {
+    color: ${({ theme }) => theme.colors.body};
   }
 `;
 
 export const PerdonalDataBsTelephone = styled(BsTelephone)`
   width: 24px;
   height: 24px;
-  color: ${({ theme }) => theme.colors.body};
-  
-  &.active{
-    color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
+
+  &.active {
+    color: ${({ theme }) => theme.colors.body};
   }
 `;
 
 export const PerdonalDataTbTruckDelivery = styled(TbTruckDelivery)`
   width: 24px;
   height: 24px;
-  color: ${({ theme }) => theme.colors.body};
-  
-  &.active{
-    color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
+
+  &.active {
+    color: ${({ theme }) => theme.colors.body};
   }
 `;
 

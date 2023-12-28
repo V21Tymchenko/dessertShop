@@ -59,9 +59,9 @@ const PersonalData: FC = () => {
 
             <button>
               {dropDown.userData ? (
-                <PerdonalDataIoIosArrowDown />
-              ) : (
                 <PerdonalDataIoIosArrowUp />
+                ) : (
+                <PerdonalDataIoIosArrowDown />
               )}
             </button>
           </PerdonalDataButton>
@@ -92,10 +92,10 @@ const PersonalData: FC = () => {
               <span>Контакти</span>
             </PerdonalDataButtonBox>
             <button>
-              {dropDown.contacts ? (
-                <PerdonalDataIoIosArrowDown />
-              ) : (
+              {dropDown.userData ? (
                 <PerdonalDataIoIosArrowUp />
+                ) : (
+                <PerdonalDataIoIosArrowDown />
               )}
             </button>
           </PerdonalDataButton>
@@ -125,10 +125,10 @@ const PersonalData: FC = () => {
               <span>Адреса доставки</span>
             </PerdonalDataButtonBox>
             <button>
-              {dropDown.adress ? (
-                <PerdonalDataIoIosArrowDown />
-              ) : (
+              {dropDown.userData ? (
                 <PerdonalDataIoIosArrowUp />
+                ) : (
+                <PerdonalDataIoIosArrowDown />
               )}
             </button>
           </PerdonalDataButton>
@@ -166,10 +166,10 @@ const PersonalData: FC = () => {
             </PerdonalDataButtonBox>
 
             <button>
-              {dropDown.pass ? (
-                <PerdonalDataIoIosArrowDown />
-              ) : (
+              {dropDown.userData ? (
                 <PerdonalDataIoIosArrowUp />
+                ) : (
+                <PerdonalDataIoIosArrowDown />
               )}
             </button>
           </PerdonalDataButton>
