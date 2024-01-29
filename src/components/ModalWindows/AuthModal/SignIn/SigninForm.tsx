@@ -18,12 +18,10 @@ import {
   PasswordTogglerIcon,
 } from "./SigninForm.styled";
 
-
-import { AppDispatch } from "@/redux/store";
 import { initialValuesSigninForm } from "@/components/App.types";
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string()
+  login: Yup.string()
     .email("Введіть дійсний email")
     .required('Поле "Ел. пошта" є обов’язковим'),
   password: Yup.string()
@@ -31,11 +29,10 @@ const validationSchema = Yup.object().shape({
     .required('Поле "Пароль" є обов’язковим'),
 });
 
- const initialValues: initialValuesProps = {
-    login: email || "",
-    password: "",
-  };
-
+const initialValues: initialValuesProps = {
+  login: "",
+  password: "",
+};
 
 interface SignFormProps {
   onForgotPasswordClick: () => void;
@@ -53,20 +50,18 @@ const SigninForm: FC<SignFormProps> = ({
 
   const dispatch: AppDispatch = useDispatch();
 
-
   useEffect(() => {
     if (verified) {
       shouldCloseModal(true);
     }
   }, [verified, shouldCloseModal]);
 
+  // const loginOnSubmit = async (values: initialValuesProps) => {
+  //   await dispatch(login(values));
+  //   shouldCloseModal(false);
+  // };
 
-  const loginOnSubmit = async (values: initialValuesProps) => {
-    await dispatch(login(values));
-    shouldCloseModal(false);
-  };
-
-  const onSubmit = (values: initialValuesSigninForm) => {
+  const onSubmit = (values: initialValuesProps) => {
     console.log(values);
     dispatch(login(values));
     shouldCloseModal(false);
