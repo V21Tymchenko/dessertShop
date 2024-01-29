@@ -25,7 +25,7 @@ const initUser: InitUser = {
   email: "",
 };
 
-const initialState: InitialState = {
+export const initialState: InitialState = {
   user: initUser,
   token: null,
   isRefreshed: false,

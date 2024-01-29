@@ -9,6 +9,11 @@ import CakesTypePage from "./pages/CakesTypePage";
 import BentoTypePage from "./pages/BentoTypePage";
 import MacaroonTypePage from "./pages/MacaroonTypePage";
 import TartsTypePage from "./pages/TartsTypePage";
+import UserPage from "./pages/UserPage";
+import PersonalData from "./components/UserData/PersonalData/PersonalData";
+import MyOrders from "./components/UserData/MyOrders/MyOrders";
+import WishList from "./components/UserData/WishList/WishList";
+
 
 const App = () => {
   return (
@@ -29,9 +34,15 @@ const App = () => {
           <Route path="tarts" element={<TartsTypePage />} />
           <Route path="newCakes" element={<div>newCakes</div>} />
           <Route path="desserts/:id" element={<CakesByIdRender />} />
+          <Route path="user" element={<UserPage />}>
+            <Route index path="personalData" element={<PersonalData />} />
+            <Route path="myOrders" element={<MyOrders />} />
+            <Route path="wishList" element={<WishList />} />
+          </Route>
         </Route>
         <Route path="/order" element={<OrderPage />} />
         <Route path="/verify/:code" element={<ConfirmationPage />} />
+        <Route path="*" element={<div>404 NOT FOUND</div>} />
       </Routes>
     </>
   );

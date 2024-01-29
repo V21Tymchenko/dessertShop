@@ -17,6 +17,26 @@ import {
   PasswordToggler,
   PasswordTogglerIcon,
 } from "./SigninForm.styled";
+
+
+import { AppDispatch } from "@/redux/store";
+import { initialValuesSigninForm } from "@/components/App.types";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Введіть дійсний email")
+    .required('Поле "Ел. пошта" є обов’язковим'),
+  password: Yup.string()
+    .min(6, "Пароль повинен містити принаймні 6 символів")
+    .required('Поле "Пароль" є обов’язковим'),
+});
+
+ const initialValues: initialValuesProps = {
+    login: email || "",
+    password: "",
+  };
+
+
 interface SignFormProps {
   onForgotPasswordClick: () => void;
   shouldCloseModal: (value: boolean) => void;
@@ -30,7 +50,9 @@ const SigninForm: FC<SignFormProps> = ({
 
   const email = useSelector(selectEmail);
   const verified = useSelector(selectIsVerified);
+
   const dispatch: AppDispatch = useDispatch();
+
 
   useEffect(() => {
     if (verified) {
@@ -38,30 +60,16 @@ const SigninForm: FC<SignFormProps> = ({
     }
   }, [verified, shouldCloseModal]);
 
-  const initialValues: initialValuesProps = {
-    login: email || "",
-    password: "",
-  };
-
-  const validationSchema = Yup.object().shape({
-    login: Yup.string()
-      .email("Введіть дійсний email")
-      .required('Поле "Ел. пошта" є обов’язковим'),
-    password: Yup.string()
-      .min(6, "Пароль повинен містити принаймні 6 символів")
-      .required('Поле "Пароль" є обов’язковим'),
-  });
 
   const loginOnSubmit = async (values: initialValuesProps) => {
     await dispatch(login(values));
     shouldCloseModal(false);
   };
-  const onSubmit = (values: initialValuesProps) => {
-    try {
-      loginOnSubmit(values);
-    } catch (error) {
-      console.error("Login error:", error);
-    }
+
+  const onSubmit = (values: initialValuesSigninForm) => {
+    console.log(values);
+    dispatch(login(values));
+    shouldCloseModal(false);
   };
 
   return (

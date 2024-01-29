@@ -8,6 +8,16 @@ export const ContainerFooter = styled.footer`
   padding-top: ${({ theme }) => theme.spacing(14)};
   padding-bottom: ${({ theme }) => theme.spacing(8)};
   margin-top: 130px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f7d1de;
+  }
 `;
 export const FooterLogo = styled.img`
   margin-bottom: ${({ theme }) => theme.spacing(4)};
