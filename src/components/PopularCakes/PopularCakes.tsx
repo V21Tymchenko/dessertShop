@@ -2,10 +2,7 @@ import { FC } from "react";
 import { useState } from "react";
 import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 import Button from "@/components/Button/Button";
-import img from "@/assets/delete/popular.jpg";
-
-
-
+import img from "../../assets/delete/popular.jpg";
 
 import {
   ArrowIcon,
