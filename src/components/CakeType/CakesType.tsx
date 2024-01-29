@@ -46,7 +46,10 @@ const CakeType: FC<CakeTypeProps> = ({
   return (
     <section>
       <CatalogNavigation
-        navigationLinks={[{ hash: `/${cakeType}`, name: title, $active: true }]}
+        navigationLinks={[
+          { hash: "/catalog", name: "Каталог", $active: false },
+          { hash: `/${cakeType}`, name: title, $active: true },
+        ]}
       />
       <CakesTypeContainer>
         <CakesTitle>{title}</CakesTitle>

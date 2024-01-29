@@ -56,6 +56,7 @@ const CakesByIdRender: FC = () => {
           <>
             <CatalogNavigation
               navigationLinks={[
+                { hash: "/catalog", name: "Каталог", $active: false },
                 {
                   hash: `/${cakeById.type}`,
                   name:

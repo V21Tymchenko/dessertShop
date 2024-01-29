@@ -23,12 +23,6 @@ const CatalogNavigation: FC<CatalogNavigationProps> = ({ navigationLinks }) => {
       <li>
         <CatalogNavigationSlash>/</CatalogNavigationSlash>
       </li>
-      <li>
-        <CatalogNavigationLink to="/catalog">Каталог</CatalogNavigationLink>
-      </li>
-      <li>
-        <CatalogNavigationSlash>/</CatalogNavigationSlash>
-      </li>
       {navigationLinks.map(({ hash, name, $active }, index) => (
         <React.Fragment key={hash}>
           <li>
