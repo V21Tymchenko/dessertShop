@@ -27,7 +27,7 @@ const Hero: FC = () => {
             об'єднуються в чудових десертах, створених з найкращих інгредієнтів
             та любові до кулінарного мистецтва.
           </TextHeroSecondary>
-          <HeroLink to="cakes">Каталог</HeroLink>
+          <HeroLink to="catalog">Каталог</HeroLink>
         </ContentHero>
         <ImagesWrapper>
           <picture>

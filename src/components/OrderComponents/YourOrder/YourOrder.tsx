@@ -1,4 +1,4 @@
-import { FC, FormEvent, ChangeEvent } from "react";
+import { FC, FormEvent } from "react";
 import minus from "@/assets/images/orderForm/minus.svg";
 import plus from "@/assets/images/orderForm/plus.svg";
 import Button from "@/components/Button/Button";
@@ -30,7 +30,7 @@ const YourOrder: FC = () => {
       setNumberCakes(prevQuantity => prevQuantity - 1);
     }
   };
-  const handleNumbersChange = (e: FormEvent) => {
+  const handleNumbersCakesChange = (e: FormEvent) => {
     setNumberCakes(Number((e.target as HTMLInputElement).value));
   };
   return (
@@ -58,7 +58,7 @@ const YourOrder: FC = () => {
                 type="text"
                 name="number"
                 value={numberCakes}
-                onChange={(e: ChangeEvent) => handleNumbersChange(e)}
+                onChange={handleNumbersCakesChange}
               />
               <YourOrderButton type="button">
                 <YourOrderOperation
@@ -80,7 +80,7 @@ const YourOrder: FC = () => {
         <TogetherText>Разом до сплати:</TogetherText>
         <TogetherText>760 грн</TogetherText>
       </CostText>
-      <Button type="submit" text="Замовлення підтверджую" variant="order" />
+      <Button type="submit" text="Замовлення підтверджую" maxwidth="100%" margintop="40px" />
       <Button text="Повернутись до покупок" variant="backToSHop" />
     </YourOrderContainer>
   );

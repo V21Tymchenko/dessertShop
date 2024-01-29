@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useState } from "react";
 import ModalBasket from "../ModalWindows/ModalBasket/ModalBasket";
 import Button from "@/components/Button/Button";
-import img from "@/assets/delete/фото.jpg";
+import img from "@/assets/delete/basket.svg";
 
 import {
   ArrowIcon,
@@ -19,6 +19,7 @@ import {
   PopurContainer,
   PopurSection,
 } from "./PopularCakes.styled";
+import ButtonsCard from "../Button/ButtonsCard";
 
 const PopularCakes: FC = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
@@ -43,17 +44,8 @@ const PopularCakes: FC = () => {
             <PopularTitle>Торт Шоколадно-Чорничний</PopularTitle>
             <PopularText>760 грн/1 кг</PopularText>
             <ButtonsContainer>
-              <Button text="Переглянути">
-                <ArrowIcon />
-              </Button>
               {isBasketOpen && <ModalBasket closeModal={toggleBasketModal} />}
-              <Button
-                text="До кошику"
-                variant={"cardOpacity"}
-                onClick={toggleBasketModal}
-              >
-                <BasketIcon />
-              </Button>
+              <ButtonsCard toggleBasketModal={toggleBasketModal} />
             </ButtonsContainer>
           </CardsTextContainer>
         </PopularItem>
@@ -64,16 +56,8 @@ const PopularCakes: FC = () => {
             <PopularTitle>Бенто-торт Маракуйя-Ананас</PopularTitle>
             <PopularText>550 грн/1 кг</PopularText>
             <ButtonsContainer>
-              <Button text="Переглянути">
-                <ArrowIcon />
-              </Button>
-              <Button
-                text="До кошику"
-                variant={"cardOpacity"}
-                onClick={toggleBasketModal}
-              >
-                <BasketIcon />
-              </Button>
+              {isBasketOpen && <ModalBasket closeModal={toggleBasketModal} />}
+              <ButtonsCard toggleBasketModal={toggleBasketModal} />
             </ButtonsContainer>
           </CardsTextContainer>
         </PopularItem>
@@ -84,16 +68,8 @@ const PopularCakes: FC = () => {
             <PopularTitle>Капкейки Святкові</PopularTitle>
             <PopularText>450 грн/8 шт</PopularText>
             <ButtonsContainer>
-              <Button text="Переглянути">
-                <ArrowIcon />
-              </Button>
-              <Button
-                text="До кошику"
-                variant={"cardOpacity"}
-                onClick={toggleBasketModal}
-              >
-                <BasketIcon />
-              </Button>
+              {isBasketOpen && <ModalBasket closeModal={toggleBasketModal} />}
+              <ButtonsCard toggleBasketModal={toggleBasketModal} />
             </ButtonsContainer>
           </CardsTextContainer>
         </PopularItem>
@@ -104,16 +80,8 @@ const PopularCakes: FC = () => {
             <PopularTitle>Макаруни №8</PopularTitle>
             <PopularText>480 грн/10 шт</PopularText>
             <ButtonsContainer>
-              <Button text="Переглянути">
-                <ArrowIcon />
-              </Button>
-              <Button
-                text="До кошику"
-                variant={"cardOpacity"}
-                onClick={toggleBasketModal}
-              >
-                <BasketIcon />
-              </Button>
+              {isBasketOpen && <ModalBasket closeModal={toggleBasketModal} />}
+              <ButtonsCard toggleBasketModal={toggleBasketModal} />
             </ButtonsContainer>
           </CardsTextContainer>
         </PopularItem>

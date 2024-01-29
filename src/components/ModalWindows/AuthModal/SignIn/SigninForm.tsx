@@ -1,7 +1,9 @@
 import { useEffect, useState, FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "@/redux/store";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
+import { initialValuesProps } from "@/helpers/generalInterface";
 import { selectEmail, selectIsVerified } from "@/redux/Auth/auth-selectors";
 import { login } from "@/redux/Auth/auth-operations";
 import Button from "../../../Button/Button";
@@ -15,13 +17,9 @@ import {
   PasswordToggler,
   PasswordTogglerIcon,
 } from "./SigninForm.styled";
-
 interface SignFormProps {
   onForgotPasswordClick: () => void;
   shouldCloseModal: (value: boolean) => void;
-}
-interface initialValuesProps {
-  [key: string]: string;
 }
 
 const SigninForm: FC<SignFormProps> = ({
@@ -32,7 +30,7 @@ const SigninForm: FC<SignFormProps> = ({
 
   const email = useSelector(selectEmail);
   const verified = useSelector(selectIsVerified);
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     if (verified) {
@@ -41,12 +39,12 @@ const SigninForm: FC<SignFormProps> = ({
   }, [verified, shouldCloseModal]);
 
   const initialValues: initialValuesProps = {
-    email: email || "",
+    login: email || "",
     password: "",
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string()
+    login: Yup.string()
       .email("Введіть дійсний email")
       .required('Поле "Ел. пошта" є обов’язковим'),
     password: Yup.string()
@@ -64,7 +62,6 @@ const SigninForm: FC<SignFormProps> = ({
     } catch (error) {
       console.error("Login error:", error);
     }
-    loginOnSubmit(values);
   };
 
   return (
@@ -84,7 +81,7 @@ const SigninForm: FC<SignFormProps> = ({
                 </label>
                 <Field
                   type="text"
-                  name="email"
+                  name="login"
                   placeholder="Введіть ел. пошту або номер телефону"
                   as={InputField}
                 />

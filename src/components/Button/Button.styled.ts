@@ -1,11 +1,16 @@
 import styled, { css } from "styled-components";
 
-export const ButtonStyled = styled.button<{ $variant: string | null }>`
+export const ButtonStyled = styled.button<{
+  $variant: string | null;
+  $maxwidth: string | null;
+  $margintop: string | null;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: ${({ $margintop }) => $margintop};
   width: 100%;
-  max-width: 264px;
+  max-width: ${({ $maxwidth }) => $maxwidth};
   padding: 12px 24px;
   font-family: ${({ theme }) => theme.fonts.secondary};
 
@@ -46,19 +51,8 @@ export const ButtonStyled = styled.button<{ $variant: string | null }>`
         background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
       }
     `}
+
   ${({ $variant }) =>
-    $variant === "input" &&
-    css`
-      max-width: 100%;
-      margin-top: 48px;
-    `}
-         ${({ $variant }) =>
-    $variant === "order" &&
-    css`
-      max-width: 100%;
-      margin-top: 40px;
-    `}
-    ${({ $variant }) =>
     $variant === "backToSHop" &&
     css`
       max-width: 100%;
@@ -71,12 +65,6 @@ export const ButtonStyled = styled.button<{ $variant: string | null }>`
       &:focus {
         background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
       }
-    `}
-     ${({ $variant }) =>
-    $variant === "authorization" &&
-    css`
-      max-width: 180px;
-      margin-top: 32px;
     `}
 
     ${({ $variant }) =>
