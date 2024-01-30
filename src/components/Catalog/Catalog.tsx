@@ -6,6 +6,9 @@ import { CakesCategoryProps } from "@/helpers/definitions/cakesCategory";
 import {
   CakesCategoryItem,
   CakesCategoryList,
+  CakesCategoryNav,
+  CakesCategoryNavItem,
+  CakesCategoryNavList,
   CakesCategorySection,
   CakesCategoryText,
   CakesCategoryTitle,
@@ -15,12 +18,25 @@ const Catalog: FC = () => {
   return (
     <CakesCategorySection>
       <ArmyHelp />
+      <CakesCategoryNavList>
+        <li>
+          <CakesCategoryNav to="/">Головна</CakesCategoryNav>
+        </li>
+        <li>
+          <CakesCategoryNavItem>/</CakesCategoryNavItem>
+        </li>
+        <li>
+          <CakesCategoryNav active={String(true)} to="/catalog">
+            Каталог
+          </CakesCategoryNav>
+        </li>
+      </CakesCategoryNavList>
       <CakesCategoryTitle>Каталог</CakesCategoryTitle>
       <CakesCategoryList>
         {cakesCategory.map(
-          ({ id, text, src, color, cakesRetina }: CakesCategoryProps) => (
+          ({ id, text, path, src, color, cakesRetina }: CakesCategoryProps) => (
             <CakesCategoryItem key={id} color={color}>
-              <NavLink to="#">
+              <NavLink to={path}>
                 <picture>
                   <source
                     media="(min-width: 1280px)"

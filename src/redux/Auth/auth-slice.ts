@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { register, verifyUser, login, logout } from "./auth-operations";
-import { string } from "prop-types";
 
 export interface InitUser {
   name: string;

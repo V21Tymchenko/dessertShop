@@ -12,6 +12,7 @@ import newCakesRetina from "@/assets/images/category/newCakeRetina.webp";
 export interface CakesCategoryProps {
   id: number;
   text: string;
+  path: string;
   src: string;
   cakesRetina: string;
   color: string;
@@ -22,6 +23,7 @@ const cakesCategory: CakesCategoryProps[] = [
   {
     id: 1,
     text: "Торти на різні події",
+    path: "/cakes",
     src: cakes,
     cakesRetina: CakesRetina,
     color: "#f7d1de",
@@ -30,6 +32,7 @@ const cakesCategory: CakesCategoryProps[] = [
   {
     id: 2,
     text: "Бенто-торти",
+    path: "/bento",
     src: bentoCakes,
     cakesRetina: bentoRetina,
     color: "#ffeb98",
@@ -38,6 +41,7 @@ const cakesCategory: CakesCategoryProps[] = [
   {
     id: 3,
     text: "Макаруни",
+    path: "/macaroon",
     src: macaroni,
     cakesRetina: macaroniRetina,
     color: "#bff3ee",
@@ -46,6 +50,7 @@ const cakesCategory: CakesCategoryProps[] = [
   {
     id: 4,
     text: "Тістечка",
+    path: "/tarts",
     src: pastry,
     cakesRetina: pastryRetina,
     color: "#cddafa",
@@ -54,6 +59,7 @@ const cakesCategory: CakesCategoryProps[] = [
   {
     id: 5,
     text: "Новинки",
+    path: "/newCakes",
     src: newCake,
     cakesRetina: newCakesRetina,
     color: "#cddafa",

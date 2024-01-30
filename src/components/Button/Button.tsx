@@ -8,6 +8,8 @@ interface ButtonProps {
   type?: "button" | "reset" | "submit";
   variant?: string | null;
   disabled?: boolean;
+  maxwidth?: string;
+  margintop?: string;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -17,6 +19,8 @@ const Button: FC<ButtonProps> = ({
   type = "button",
   variant = null,
   disabled = false,
+  maxwidth = "264px",
+  margintop = "0px",
 }) => {
   return (
     <ButtonStyled
@@ -24,6 +28,8 @@ const Button: FC<ButtonProps> = ({
       onClick={onClick}
       $variant={variant}
       disabled={disabled}
+      $maxwidth={maxwidth}
+      $margintop={margintop}
     >
       {text}
       {children}

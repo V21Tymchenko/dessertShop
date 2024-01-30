@@ -86,7 +86,7 @@ const NoAuthorizationOrder: FC = () => {
                 Google
               </OrderEnterGoogle>
             </OrderEnterContainer>
-            <Button type="submit" text="Увійти" variant="authorization" />
+            <Button type="submit" text="Увійти" maxwidth="180px" margintop="32px" />
           </Form>
         </Formik>
       ) : (

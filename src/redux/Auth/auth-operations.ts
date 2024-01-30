@@ -1,8 +1,12 @@
 import axios from "axios";
 import { Notify } from "notiflix";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+
+import { initialValuesProps } from "@/helpers/generalInterface";
+
 import { InitialState } from "./auth-slice";
 import { initialValuesSigninForm } from "@/components/App.types";
+
 
 axios.defaults.baseURL = "https://online-store-frwk.onrender.com";
 
@@ -18,7 +22,7 @@ const tokenControl = {
 
 export const register = createAsyncThunk(
   "auth/register",
-  async (credentials, thunkAPI) => {
+  async (credentials: initialValuesProps, thunkAPI) => {
     try {
       const { data } = await axios.post("/auth/email/register", credentials);
       tokenControl.set(data.token);
@@ -55,10 +59,9 @@ export const verifyUser = createAsyncThunk(
 
 export const login = createAsyncThunk<InitialState, initialValuesSigninForm>(
   "auth/login",
-  async (credentials, thunkAPI) => {
+  async (credentials: initialValuesProps, thunkAPI) => {
     try {
       const { data } = await axios.post("/auth/login", credentials);
-
       tokenControl.set(data.token);
 
       Notify.success("Login is successful");

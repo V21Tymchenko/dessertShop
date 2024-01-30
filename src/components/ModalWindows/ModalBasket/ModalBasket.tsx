@@ -28,7 +28,7 @@ import {
   EmptyBusk,
 } from "./ModalBasket.styled";
 import { useState } from "react";
-import img from "@/assets/delete/фото.jpg";
+import img from "@/assets/delete/basket.svg";
 import sprite from "@/assets/images/modal/sprite-basket.svg";
 import { Link } from "react-router-dom";
 

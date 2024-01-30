@@ -1,4 +1,4 @@
-import { useState, FC, FormEvent, ChangeEvent } from "react";
+import { useState, FC, ChangeEvent } from "react";
 import { Formik } from "formik";
 // import UserNameForm from "../UserNameForm/UserNameForm";
 import NoAuthorizationOrder from "@/components/NoAuthorizationOrder";
@@ -42,13 +42,13 @@ const OrderForm: FC = () => {
     console.log(values);
   };
 
-  const handleDeliveryChange = (event: FormEvent) => {
-    const value = (event.target as HTMLSelectElement).value;
+  const handleDeliveryChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
     setDelivery(value);
   };
 
-  const handlePaymentChange = (event: FormEvent) => {
-    const value = (event.target as HTMLSelectElement).value;
+  const handlePaymentChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
     setPayment(value);
   };
   return (
@@ -69,7 +69,7 @@ const OrderForm: FC = () => {
                     name="delivery"
                     value="self"
                     checked={delivery === "self"}
-                    onChange={(e: ChangeEvent) => handleDeliveryChange(e)}
+                    onChange={handleDeliveryChange}
                   />
                   <RadioButton
                     type="button"
@@ -92,7 +92,7 @@ const OrderForm: FC = () => {
                     name="delivery"
                     value="courier"
                     checked={delivery === "courier"}
-                    onChange={(e: ChangeEvent) => handleDeliveryChange(e)}
+                    onChange={handleDeliveryChange}
                   />
                   <RadioButton
                     type="button"
@@ -119,7 +119,7 @@ const OrderForm: FC = () => {
                     name="payment"
                     value="receiving"
                     checked={payment === "receiving"}
-                    onChange={(e: ChangeEvent) => handlePaymentChange(e)}
+                    onChange={handlePaymentChange}
                   />
                   <RadioButton
                     type="button"
@@ -142,7 +142,7 @@ const OrderForm: FC = () => {
                     name="payment"
                     value="details"
                     checked={payment === "details"}
-                    onChange={(e: ChangeEvent) => handlePaymentChange(e)}
+                    onChange={handlePaymentChange}
                   />
                   <RadioButton
                     type="button"

@@ -18,12 +18,6 @@ export const ContainerFooter = styled.footer`
     height: 1px;
     background-color: #f7d1de;
   }
-  &::before {
-    /* top: 1564px; */
-  }
-  &::after {
-    /* top: 1697px; */
-  }
 `;
 export const FooterLogo = styled.img`
   margin-bottom: ${({ theme }) => theme.spacing(4)};

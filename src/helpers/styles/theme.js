@@ -54,6 +54,7 @@ const theme = {
   },
   shadows: {
     primary: "2px 4px 16px 0px rgba(115, 115, 115, 0.20)",
+    secondary: "3px 5px 20px 0px rgba(115, 115, 115, 0.10)",
   },
   transitions: {
     primary: "all 250ms cubic-bezier(0.4, 0, 0.2, 1)",

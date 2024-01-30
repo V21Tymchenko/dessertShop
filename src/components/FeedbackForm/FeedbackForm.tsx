@@ -43,7 +43,8 @@ const FeedbackForm: FC = () => {
             <StyledInputForm type="tel" name="phone" placeholder="Ваш номер" />
             <Button
               type="submit"
-              variant={"input"}
+              maxwidth="100%"
+              margintop="48px"
               text={"Передзвоніть мені"}
             />
           </StyledFeedbackForm>

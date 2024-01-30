@@ -1,7 +1,9 @@
 import { useEffect, useState, FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "@/redux/store";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
+import { initialValuesProps } from "@/helpers/generalInterface";
 import { selectEmail, selectIsVerified } from "@/redux/Auth/auth-selectors";
 import { login } from "@/redux/Auth/auth-operations";
 import Button from "../../../Button/Button";
@@ -15,11 +17,11 @@ import {
   PasswordToggler,
   PasswordTogglerIcon,
 } from "./SigninForm.styled";
-import { AppDispatch } from "@/redux/store";
+
 import { initialValuesSigninForm } from "@/components/App.types";
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string()
+  login: Yup.string()
     .email("Введіть дійсний email")
     .required('Поле "Ел. пошта" є обов’язковим'),
   password: Yup.string()
@@ -27,8 +29,8 @@ const validationSchema = Yup.object().shape({
     .required('Поле "Пароль" є обов’язковим'),
 });
 
-const initialValues: initialValuesSigninForm = {
-  email: "",
+const initialValues: initialValuesProps = {
+  login: "",
   password: "",
 };
 
@@ -45,7 +47,8 @@ const SigninForm: FC<SignFormProps> = ({
 
   const email = useSelector(selectEmail);
   const verified = useSelector(selectIsVerified);
-  const dispatch = useDispatch<AppDispatch>();
+
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     if (verified) {
@@ -53,7 +56,12 @@ const SigninForm: FC<SignFormProps> = ({
     }
   }, [verified, shouldCloseModal]);
 
-  const onSubmit = (values: initialValuesSigninForm) => {
+  // const loginOnSubmit = async (values: initialValuesProps) => {
+  //   await dispatch(login(values));
+  //   shouldCloseModal(false);
+  // };
+
+  const onSubmit = (values: initialValuesProps) => {
     console.log(values);
     dispatch(login(values));
     shouldCloseModal(false);
@@ -76,7 +84,7 @@ const SigninForm: FC<SignFormProps> = ({
                 </label>
                 <Field
                   type="text"
-                  name="email"
+                  name="login"
                   placeholder="Введіть ел. пошту або номер телефону"
                   as={InputField}
                 />

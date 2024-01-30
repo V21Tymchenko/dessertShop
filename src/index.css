@@ -43,6 +43,7 @@ button {
   display: block;
   background: none;
   border: none;
+  cursor: pointer;
 }
 a {
   text-decoration: none;

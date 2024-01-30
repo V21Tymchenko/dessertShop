@@ -3,7 +3,7 @@ export interface navItemsProp {
   text: string;
 }
 const navItems: navItemsProp[] = [
-  { href: "cakes", text: "Каталог" },
+  { href: "catalog", text: "Каталог" },
   { href: "constructor", text: "Конструктор товарів" },
   { href: "about", text: "Про нас" },
   { href: "delivery", text: "Доставка і оплата" },
