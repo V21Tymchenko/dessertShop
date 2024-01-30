@@ -14,6 +14,7 @@ import PersonalData from "./components/UserData/PersonalData/PersonalData";
 import MyOrders from "./components/UserData/MyOrders/MyOrders";
 import WishList from "./components/UserData/WishList/WishList";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import CooperationPage from "./pages/CooperationPage";
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
           <Route path="constructor" element={<div>CONSTRUCTOR</div>} />
           <Route path="about" element={<AboutPage />} />
           <Route path="delivery" element={<div>DELIVERY</div>} />
-          <Route path="cooperation" element={<div>COOPERATION</div>} />
+          <Route path="cooperation" element={<CooperationPage />} />
           <Route path="questions" element={<div>QUESTIONS</div>} />
           <Route path="contacts" element={<div>CONTACTS</div>} />
           <Route path="cakes" element={<CakesTypePage />} />
