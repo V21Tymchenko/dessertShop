@@ -33,7 +33,7 @@ export const MainContainerInfo = styled.div`
 export const FooterTitle = styled.h2`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-size: ${({ theme }) => theme.fontSizes.m};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: ${({ theme }) => theme.lineHeights.mediumTitle};
   margin-bottom: ${({ theme }) => theme.spacing(4)};
 `;

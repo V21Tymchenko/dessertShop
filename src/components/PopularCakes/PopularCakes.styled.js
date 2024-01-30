@@ -13,7 +13,7 @@ export const PopurContainer = styled.div`
 `;
 export const PopularList = styled.ul`
   display: flex;
-  margin-top: 41px;
+  margin-top: ${({ theme }) => theme.spacing(10)};
   gap: ${({ theme }) => theme.spacing(10)};
 `;
 export const PopularItem = styled.li`
