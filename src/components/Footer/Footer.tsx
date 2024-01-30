@@ -38,13 +38,13 @@ const Footer: FC = () => {
                 <FooterListLink to="bento">Бенто-торти</FooterListLink>
               </FooterListItem>
               <FooterListItem>
-                <FooterListLink to="macaroni">Макаруни</FooterListLink>
+                <FooterListLink to="macaroon">Макаруни</FooterListLink>
               </FooterListItem>
               <FooterListItem>
-                <FooterListLink to="pastry">Тістечка</FooterListLink>
+                <FooterListLink to="tarts">Тістечка</FooterListLink>
               </FooterListItem>
               <FooterListItem>
-                <FooterListLink to="new">Новинки</FooterListLink>
+                <FooterListLink to="newCakes">Новинки</FooterListLink>
               </FooterListItem>
               <FooterListItem>
                 <FooterListLink to="dayCakes">Пропозиції дня</FooterListLink>

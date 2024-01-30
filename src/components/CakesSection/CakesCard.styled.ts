@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
 export const CakesCardWrappers = styled.section`
   display: flex;
   gap: 40px;
-  margin-top: 86px;
+  margin-top: 96px;
 `;
 
 export const CardWrapperConstructor = styled(Link)`
