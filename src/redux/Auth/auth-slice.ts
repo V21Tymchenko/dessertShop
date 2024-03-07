@@ -1,5 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { register, verifyUser, login, logout } from "./auth-operations";
+import {
+  register,
+  verifyUser,
+  login,
+  logout,
+  googleLogin,
+} from "./auth-operations";
 
 export interface InitUser {
   name: string;
@@ -13,6 +19,7 @@ export interface InitialState {
   token: string | null;
   isRefreshed: boolean;
   isVerified: boolean;
+  google?: null | object;
   error: unknown;
   refreshToken: string | null;
   file: string | null;
@@ -97,6 +104,29 @@ const authSlice = createSlice({
         state.isRefreshed = false;
         state.error = action.payload;
       });
+    
+    builder
+      .addCase(googleLogin.pending, state => {
+        state.isRefreshed = true;
+      })
+      .addCase(
+        googleLogin.fulfilled,
+        (state, action) => {
+          state.isRefreshed = false;
+          state.isVerified = false;
+          state.error = null;
+          state.google = action.payload;
+          state.token = action.payload.token;
+          state.refreshToken = action.payload.refreshToken;
+        }
+      )
+      .addCase(
+        googleLogin.rejected,
+        (state, action: PayloadAction<unknown>) => {
+          state.isRefreshed = false;
+          state.error = action.payload;
+        }
+      );
     builder
       .addCase(logout.pending, state => {
         state.isRefreshed = true;

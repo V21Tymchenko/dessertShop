@@ -47,6 +47,7 @@ const CustomInput: FC<PropsType> = props => {
 
   const successMessages: MessageProps = {
     name: "Nice to meet you!",
+    phone: "Phone is okay",
     email: "Your email looks good and is ready for action.",
     password: "Password is okay.",
   };
