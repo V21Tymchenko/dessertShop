@@ -2,11 +2,11 @@ import { useEffect, useState, FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { Formik, Field } from "formik";
-import * as Yup from "yup";
 import { initialValuesProps } from "@/helpers/generalInterface";
+import { signInSchema } from "@/helpers/schemas/authValidationSchema";
 import { selectEmail, selectIsVerified } from "@/redux/Auth/auth-selectors";
 import { login } from "@/redux/Auth/auth-operations";
-import Button from "../../../Button/Button";
+import Button from "@/components/Button/Button";
 import sprite from "@/assets/images/modal/sprite-eye.svg";
 import {
   LoginHeader,
@@ -18,22 +18,12 @@ import {
   PasswordTogglerIcon,
 } from "./SigninForm.styled";
 
-import { initialValuesSigninForm } from "@/components/App.types";
 
-const validationSchema = Yup.object().shape({
-  login: Yup.string()
-    .email("Введіть дійсний email")
-    .required('Поле "Ел. пошта" є обов’язковим'),
-  password: Yup.string()
-    .min(6, "Пароль повинен містити принаймні 6 символів")
-    .required('Поле "Пароль" є обов’язковим'),
-});
 
 const initialValues: initialValuesProps = {
   login: "",
   password: "",
 };
-
 interface SignFormProps {
   onForgotPasswordClick: () => void;
   shouldCloseModal: (value: boolean) => void;
@@ -44,7 +34,6 @@ const SigninForm: FC<SignFormProps> = ({
   shouldCloseModal,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
-
   const email = useSelector(selectEmail);
   const verified = useSelector(selectIsVerified);
 
@@ -56,13 +45,7 @@ const SigninForm: FC<SignFormProps> = ({
     }
   }, [verified, shouldCloseModal]);
 
-  // const loginOnSubmit = async (values: initialValuesProps) => {
-  //   await dispatch(login(values));
-  //   shouldCloseModal(false);
-  // };
-
   const onSubmit = (values: initialValuesProps) => {
-    console.log(values);
     dispatch(login(values));
     shouldCloseModal(false);
   };
@@ -73,7 +56,7 @@ const SigninForm: FC<SignFormProps> = ({
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
-        validationSchema={validationSchema}
+        validationSchema={signInSchema}
       >
         {formik => (
           <FormContainer onSubmit={formik.handleSubmit}>
@@ -85,8 +68,9 @@ const SigninForm: FC<SignFormProps> = ({
                 <Field
                   type="text"
                   name="login"
-                  placeholder="Введіть ел. пошту або номер телефону"
+                  placeholder="+380998765432"
                   as={InputField}
+                  autoComplete="username"
                 />
               </WrapperInput>
               <WrapperInput>
@@ -95,6 +79,7 @@ const SigninForm: FC<SignFormProps> = ({
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="*******"
+                  autoComplete="current-password"
                   as={InputField}
                 />
                 <PasswordToggler
@@ -114,7 +99,12 @@ const SigninForm: FC<SignFormProps> = ({
                 text={"Забули пароль"}
                 onClick={onForgotPasswordClick}
               />
-              <Button type="submit" variant={"RegButton"} text={"Увійти"} />
+              <Button
+                type="submit"
+                variant={"RegButton"}
+                text={"Увійти"}
+                margintop="58px"
+              />
             </WrapperInputField>
           </FormContainer>
         )}

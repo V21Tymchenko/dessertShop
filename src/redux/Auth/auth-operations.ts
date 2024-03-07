@@ -1,12 +1,8 @@
 import axios from "axios";
 import { Notify } from "notiflix";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
 import { initialValuesProps } from "@/helpers/generalInterface";
-
 import { InitialState } from "./auth-slice";
-import { initialValuesSigninForm } from "@/components/App.types";
-
 
 axios.defaults.baseURL = "https://online-store-frwk.onrender.com";
 
@@ -57,7 +53,7 @@ export const verifyUser = createAsyncThunk(
   }
 );
 
-export const login = createAsyncThunk<InitialState, initialValuesSigninForm>(
+export const login = createAsyncThunk<InitialState, initialValuesProps>(
   "auth/login",
   async (credentials: initialValuesProps, thunkAPI) => {
     try {
@@ -86,6 +82,26 @@ export const logout = createAsyncThunk<void, undefined>(
       await axios.post("/auth/logout");
 
       tokenControl.unset();
+    } catch (err) {
+      const hasErrMessage = (err as { message: { [key: string]: string } })
+        .message;
+      if (!hasErrMessage) {
+        throw err;
+      }
+      return thunkAPI.rejectWithValue(hasErrMessage);
+    }
+  }
+);
+
+export const googleLogin = createAsyncThunk<InitialState>(
+  "auth/google",
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await axios.get("/auth/google");
+
+      tokenControl.set(data.token);
+
+      return data;
     } catch (err) {
       const hasErrMessage = (err as { message: { [key: string]: string } })
         .message;

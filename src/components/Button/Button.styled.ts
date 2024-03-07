@@ -89,24 +89,19 @@ export const ButtonStyled = styled.button<{
     $variant === "RegButton" &&
     css`
       max-width: ${({ theme }) => theme.spacing(130)};
-      margin-top: ${({ theme }) => theme.spacing(8)};
-      padding: ${({ theme }) => theme.spacing(4)}
-        ${({ theme }) => theme.spacing(45)};
+      padding: ${({ theme }) => theme.spacing(4)};
     `}
 
     ${({ $variant }) =>
     $variant === "SignInBtn" &&
     css`
       margin-top: ${({ theme }) => theme.spacing(4)};
-      margin-bottom: ${({ theme }) => theme.spacing(4)};
-      font-family: ${({ theme }) => theme.fonts.secondary};
-      font-weight: ${({ theme }) => theme.fontWeights.bold};
-      font-size: ${({ theme }) => theme.fontSizes.s};
       color: ${({ theme }) => theme.colors.text};
       line-height: ${({ theme }) => theme.lineHeights.body};
-      margin-left: ${({ theme }) => theme.spacing(83)};
+      margin-left: auto;
+      max-width: 184px;
       background-color: inherit;
-      padding: ${({ theme }) => theme.spacing(5)}
+      padding: ${({ theme }) => theme.spacing(4)}
         ${({ theme }) => theme.spacing(6)};
       border: ${({ theme }) => theme.borders.none};
 

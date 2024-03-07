@@ -2,21 +2,19 @@ import { useState, useEffect, FC } from "react";
 import { useSelector } from "react-redux";
 import { selectIsVerified } from "@/redux/Auth/auth-selectors";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
+import Button from "@/components/Button/Button";
 import SigninForm from "./SignIn/SigninForm";
-
 import {
   AuthBackdrop,
   AuthorizationModal,
   CloseModalBtn,
   CloseModal,
   ButtonWrapper,
-  AuthButtonReg,
-  AuthButtonLog,
 } from "./AuthModal.styled";
 
 interface AuthModalProps {
   closeModal: () => void;
-  closeLogin: (value: boolean) => void;
+  closeLogin: () => void;
 }
 
 const AuthModal: FC<AuthModalProps> = ({ closeModal, closeLogin }) => {
@@ -42,21 +40,17 @@ const AuthModal: FC<AuthModalProps> = ({ closeModal, closeLogin }) => {
         <CloseModalBtn onClick={closeModal}>
           <CloseModal />
         </CloseModalBtn>
-        <ButtonWrapper>
-          <AuthButtonReg
-            className={activeButton === "register" ? "active" : ""}
+        <ButtonWrapper $activebutton={activeButton}>
+          <Button
             onClick={() => handleButtonClick("register")}
-            $variant={"cardOpacity"}
-          >
-            Реєстрація
-          </AuthButtonReg>
-          <AuthButtonLog
-            className={activeButton === "login" ? "active" : ""}
+            variant={"cardOpacity"}
+            text="Реєстрація"
+          />
+          <Button
             onClick={() => handleButtonClick("login")}
-            $variant={"cardOpacity"}
-          >
-            Вхід
-          </AuthButtonLog>
+            variant={"cardOpacity"}
+            text="Вхід"
+          />
         </ButtonWrapper>
         {activeButton === "register" ? (
           <RegistrationForm shouldCloseModal={closeLogin} />

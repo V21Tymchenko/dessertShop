@@ -1,28 +1,29 @@
-import * as Yup from 'yup';
+import * as Yup from "yup";
 
 export const signUpSchema = Yup.object({
-  name: Yup.string().required('Please enter your first and last name'),
+  name: Yup.string().required("веддіть Ваше ім'я та прізвище"),
   email: Yup.string()
     .matches(
       /^[a-zA-Z0-9_.-]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/,
-      "Doesn't look like a valid email."
+      "Не відповідає формату email"
     )
-    .required('Please enter your email address'),
+    .required('Поле "Ел. пошта" є обов’язковим'),
   password: Yup.string()
-    .min(6, 'Password must be at least 6 characters long')
-    .required('Please enter your password'),
-  phone: Yup.number().required('Please enter your phone number'),
-
+    .min(6, "Пароль має бути більше 6 знаків та цифр")
+    .required("Введіть свій пароль"),
+  phone: Yup.string()
+    .matches(/^\+\d{12}$/, "Телефон має бути у форматі +380XXXXXXXXX")
+    .required("Будь ласка, введіть свій коректний телефон"),
 });
 
 export const signInSchema = Yup.object({
   email: Yup.string()
     .matches(
       /^[a-zA-Z0-9_.-]+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/,
-      "Doesn't look like a valid email."
+      "Введіть дійсний email"
     )
-    .required('Please enter your email address'),
+    .required('Поле "Ел. пошта" є обов’язковим'),
   password: Yup.string()
-    .min(6, 'Password must be minimum 6 characters long')
-    .required('Please enter your password'),
+    .min(6, "Пароль повинен містити принаймні 6 символів")
+    .required('Поле "Пароль" є обов’язковим'),
 });

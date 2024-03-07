@@ -1,9 +1,9 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { flexCenter } from "@/helpers/styles/fragments";
 
 export const AuthInputWrapper = styled.div`
   width: 100%;
-  
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -11,27 +11,28 @@ export const AuthInputWrapper = styled.div`
 `;
 
 export const WrapperInput = styled.div`
-${flexCenter};
-align-items: flex-start;
-flex-direction: column;
-position: relative;
-`
+  ${flexCenter};
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+`;
 
 export const AuthInput = styled.input`
-width: ${({ theme }) => theme.spacing(91)};
-margin-top: ${({ theme }) => theme.spacing(2)};
-padding: 13px 4px 13px 16px;;
-font-family: ${({ theme }) => theme.fonts.secondary};
-font-weight: ${({ theme }) => theme.fontWeights.semibold};
-font-size: ${({ theme }) => theme.fontSizes.xs};
-color: ${({ theme }) => theme.colors.inputText};
-line-height: ${({ theme }) => theme.lineHeights.body};
-border-radius: ${({ theme }) => theme.radii.button};
-border: ${({ theme }) => theme.borders.normal} ${({ theme }) => theme.colors.input}; 
-  
-outline: none;
-&:focus {
-  border: 1px solid ${({ theme }) => theme.colors.hoverButtons};
+  width: ${({ theme }) => theme.spacing(91)};
+  margin-top: ${({ theme }) => theme.spacing(2)};
+  padding: 13px 4px 13px 16px;
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  color: ${({ theme }) => theme.colors.inputText};
+  line-height: ${({ theme }) => theme.lineHeights.body};
+  border-radius: ${({ theme }) => theme.radii.button};
+  border: ${({ theme }) => `${theme.borders.normal} ${theme.colors.input}`};
+
+  outline: none;
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.text};
+  }
 `;
 
 export const PasswordToggler = styled.button`
@@ -50,6 +51,7 @@ export const PasswordToggler = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverHeaderIcon};
     border-radius: ${({ theme }) => theme.spacing(3)};
+  }
 `;
 
 export const PasswordTogglerIcon = styled.svg`
@@ -63,23 +65,18 @@ export const AuthErrorMessage = styled.span`
   display: flex;
   align-items: center;
   gap: 4px;
-  bottom: -18px;
+  bottom: -21px;
   left: 0px;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
   font-size: 10px;
   line-height: calc(15 / 10);
   letter-spacing: 0.12px;
   color: #d80027;
-
-
-  }
 `;
 
 export const AuthSuccessIcon = styled.svg`
   width: 12px;
   height: 12px;
-
-  }
 `;
 
 export const AuthErrorIcon = styled(AuthSuccessIcon)`
